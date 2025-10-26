@@ -32,10 +32,12 @@ jobs:
       - name: Auto bump version
         run: npx standard-version
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Push new version & tags
         run: git push --follow-tags origin master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Build library (Rollup)
         run: npm run build
