@@ -11,6 +11,7 @@
     "clean": "rm -rf dist .turbo .rpt2_cache && npm cache clean --force",
     "build": "npm run clean && rollup -c",
     "release": "standard-version",
+    "build:publish": "npm run build && npm publish",
     "ci:release": "npx standard-version && git push --follow-tags origin master && npm run build && npm publish"
   },
   "repository": {
@@ -58,8 +59,8 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "rollup": "^2.79.1",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
