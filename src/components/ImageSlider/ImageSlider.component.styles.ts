@@ -1,0 +1,37 @@
+export const styles: any = {
+  sliderContainer: {
+    position: 'relative',
+    maxWidth: '600px',
+    margin: 'auto',
+    overflow: 'hidden',
+    userSelect: 'none',
+    touchAction: 'pan-y',
+    cursor: 'grab',
+  },
+  image: {
+    width: '100%',
+    maxHeight: '400px',
+    objectFit: 'cover',
+    display: 'block',
+    pointerEvents: 'none',
+  },
+  imageNotAvailable: {
+    width: '100%',
+    height: undefined,
+    objectFit: 'cover',
+    display: 'block',
+    pointerEvents: 'none',
+  },
+  counter: {
+    position: 'absolute',
+    bottom: '10px',
+    right: '10px',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    color: 'white',
+    padding: '4px 8px',
+    borderRadius: '12px',
+    fontSize: '14px',
+    fontWeight: '500',
+    userSelect: 'none',
+  },
+};
