@@ -3,12 +3,15 @@
   "version": "0.0.1",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "private": false,
   "files": [
     "dist"
   ],
   "scripts": {
     "clean": "rm -rf dist .turbo .rpt2_cache && npm cache clean --force",
-    "build": "npm run clean && rollup -c"
+    "build": "npm run clean && rollup -c",
+    "release": "standard-version",
+    "ci:release": "npx standard-version && git push --follow-tags origin master && npm run build && npm publish"
   },
   "repository": {
     "type": "git",
@@ -61,6 +64,7 @@
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-typescript2": "^0.36.0"
+    "rollup-plugin-typescript2": "^0.36.0",
+    "standard-version": "^9.5.0"
   }
 }
