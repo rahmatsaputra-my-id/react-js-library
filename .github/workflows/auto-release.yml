@@ -39,10 +39,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Authenticate git with PAT
-        run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
-
       - name: Push new version & tags
         run: git push --follow-tags origin master
         env:
