@@ -19,7 +19,7 @@
     "url": "git://github.com/rahmatsaputra-my-id/react-js-library.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
