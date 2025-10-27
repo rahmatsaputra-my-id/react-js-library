@@ -14,6 +14,7 @@ export const Icons: IIconOption = {
   close: `${PATH.WEDDING}/icon-close.png`,
   edit: `${PATH.IMAGE}/icon-edit.png`,
   exit: `${PATH.IMAGE}/icon-exit.png`,
+  filter: `${PATH.IMAGE}/icon-filter.png`,
   flash_off: `${PATH.IMAGE}/icon-flash-off.png`,
   flash_on: `${PATH.IMAGE}/icon-flash-on.png`,
   image_not_available: `${PATH.PERSONAL_WEB}/image-not-available.png`,

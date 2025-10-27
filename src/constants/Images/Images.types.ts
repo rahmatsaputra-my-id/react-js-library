@@ -5,6 +5,7 @@ export interface IIconOption {
   close?: string
   edit?: string
   exit?: string
+  filter?: string
   flash_off?: string
   flash_on?: string
   image_not_available: string
