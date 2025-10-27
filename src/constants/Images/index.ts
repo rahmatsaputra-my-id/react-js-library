@@ -19,6 +19,9 @@ export const Icons: IIconOption = {
   image_not_available: `${PATH.PERSONAL_WEB}/image-not-available.png`,
   information: `${PATH.IMAGE}/icon-information.png`,
   langugage: `${PATH.IMAGE}/icon-language.png`,
+  list: `${PATH.IMAGE}/icon-list.png`,
+  love_empty: `${PATH.IMAGE}/icon-love-empty.png`,
+  love_filled: `${PATH.IMAGE}/icon-love-filled.png`,
   more: `${PATH.IMAGE}/icon-more.png`,
   printer: `${PATH.IMAGE}/icon-printer.png`,
   question: `${PATH.IMAGE}/icon-question.png`,
@@ -28,6 +31,4 @@ export const Icons: IIconOption = {
   support: `${PATH.IMAGE}/icon-support.png`,
   tax: `${PATH.IMAGE}/icon-tax.png`,
   terms_and_conditions: `${PATH.IMAGE}/icon-terms-and-conditions.png`,
-  love_empty: `${PATH.IMAGE}/icon-love-empty.png`,
-  love_filled: `${PATH.IMAGE}/icon-love-filled.png`,
 }

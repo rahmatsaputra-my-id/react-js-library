@@ -10,6 +10,9 @@ export interface IIconOption {
   image_not_available: string
   information?: string
   langugage?: string
+  list?: string
+  love_empty?: string
+  love_filled?: string
   more?: string
   printer?: string
   question?: string
@@ -19,6 +22,4 @@ export interface IIconOption {
   support?: string
   tax?: string
   terms_and_conditions?: string
-  love_empty?: string
-  love_filled?: string
 }
