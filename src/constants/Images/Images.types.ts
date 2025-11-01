@@ -3,6 +3,7 @@ export interface IIconOption {
   arrow_right?: string
   camera?: string
   close?: string
+  cart?: string
   edit?: string
   exit?: string
   filter?: string

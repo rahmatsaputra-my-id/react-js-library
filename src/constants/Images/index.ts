@@ -12,6 +12,7 @@ export const Icons: IIconOption = {
   arrow_right: `${PATH.IMAGE}/icon-arrow-right.png`,
   camera: `${PATH.IMAGE}/icon-camera.png`,
   close: `${PATH.WEDDING}/icon-close.png`,
+  cart: `${PATH.IMAGE}/icon-cart.png`,
   edit: `${PATH.IMAGE}/icon-edit.png`,
   exit: `${PATH.IMAGE}/icon-exit.png`,
   filter: `${PATH.IMAGE}/icon-filter.png`,
