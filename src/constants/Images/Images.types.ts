@@ -2,8 +2,9 @@ export interface IIconOption {
   arrow_right_thin?: string
   arrow_right?: string
   camera?: string
-  close?: string
   cart?: string
+  checklist_success?: string
+  close?: string
   edit?: string
   exit?: string
   filter?: string
