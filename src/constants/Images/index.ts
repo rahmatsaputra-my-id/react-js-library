@@ -12,7 +12,7 @@ export const Icons: IIconOption = {
   arrow_right: `${PATH.IMAGE}/icon-arrow-right.png`,
   camera: `${PATH.IMAGE}/icon-camera.png`,
   cart: `${PATH.IMAGE}/icon-cart.png`,
-  checklist_success: `${PATH.IMAGE}/icon-checklist_success.png`,
+  checklist_success: `${PATH.IMAGE}/icon-checklist-success.png`,
   close: `${PATH.WEDDING}/icon-close.png`,
   edit: `${PATH.IMAGE}/icon-edit.png`,
   exit: `${PATH.IMAGE}/icon-exit.png`,
