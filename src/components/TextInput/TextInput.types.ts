@@ -20,5 +20,6 @@ export interface ITextInputProps {
   top?: number;
   type?: string;
   value?: any;
+  isInputRupiah?: boolean;
   handleOnScanQr?: (data?: string | null) => void;
 }

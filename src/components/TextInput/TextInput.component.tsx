@@ -28,11 +28,37 @@ const TextInput: React.FC<ITextInputProps> = ({
   value,
   onChange,
   handleOnScanQr,
+  isInputRupiah = false,
   ...props
 }) => {
   const [isScannerVisible, setIsScannerVisible] = useState(false);
 
-  // Add paddingRight if QR scanner button exists
+  const formatRupiahDisplay = (val: any) => {
+    if (!val) return '';
+    const clean = val.toString().replace(/\D/g, '');
+    return clean.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  };
+
+  const parseRupiahValue = (val: any) => val.toString().replace(/\D/g, '');
+
+  const handleChange = (event: any) => {
+    const inputVal = event?.target?.value || '';
+
+    if (isInputRupiah) {
+      const numericVal = parseRupiahValue(inputVal);
+      const formatted = formatRupiahDisplay(numericVal);
+
+      event.target.value = formatted;
+
+      onChange({
+        ...event,
+        target: {...event.target, value: numericVal},
+      });
+    } else {
+      onChange(event);
+    }
+  };
+
   const adjustedStyleTextInput = {
     ...styleTextInput,
     paddingRight: handleOnScanQr ? 40 : styleTextInput.paddingRight,
@@ -62,26 +88,28 @@ const TextInput: React.FC<ITextInputProps> = ({
           {label && (
             <Text style={{...styles.label, ...styleLabel}} children={label} />
           )}
+
           <View>
             {multiline ? (
               <textarea
                 rows={rows}
-                type={'text'}
+                type="text"
                 style={stylesTextInput}
-                value={value}
-                onChange={onChange}
+                value={isInputRupiah ? formatRupiahDisplay(value) : value ?? ''}
+                onChange={handleChange}
                 {...props}
               />
             ) : (
               <input
-                type={'text'}
-                value={value}
-                onChange={onChange}
+                type="text"
                 style={stylesTextInput}
+                value={isInputRupiah ? formatRupiahDisplay(value) : value ?? ''}
+                onChange={handleChange}
                 {...props}
               />
             )}
           </View>
+
           {labelError ? (
             <Text style={styles.labelError} children={labelError} />
           ) : null}
