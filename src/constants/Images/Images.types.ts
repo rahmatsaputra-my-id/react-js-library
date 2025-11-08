@@ -10,6 +10,7 @@ export interface IIconOption {
   filter?: string
   flash_off?: string
   flash_on?: string
+  history_transaction?: string
   image_not_available: string
   information?: string
   langugage?: string

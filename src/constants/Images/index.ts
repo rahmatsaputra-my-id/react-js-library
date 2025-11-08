@@ -19,6 +19,7 @@ export const Icons: IIconOption = {
   filter: `${PATH.IMAGE}/icon-filter.png`,
   flash_off: `${PATH.IMAGE}/icon-flash-off.png`,
   flash_on: `${PATH.IMAGE}/icon-flash-on.png`,
+  history_transaction: `${PATH.IMAGE}/icon-history-transaction.png`,
   image_not_available: `${PATH.PERSONAL_WEB}/image-not-available.png`,
   information: `${PATH.IMAGE}/icon-information.png`,
   langugage: `${PATH.IMAGE}/icon-language.png`,
