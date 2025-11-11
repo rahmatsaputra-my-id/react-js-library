@@ -14,6 +14,7 @@ export interface ITextInputProps {
   placeholder?: string;
   right?: number;
   rows?: number;
+  maxRows?: number;
   style?: any;
   styleLabel?: any;
   styleTextInput?: any;
@@ -21,5 +22,6 @@ export interface ITextInputProps {
   type?: string;
   value?: any;
   isInputRupiah?: boolean;
+  isInputNumber?: boolean;
   handleOnScanQr?: (data?: string | null) => void;
 }

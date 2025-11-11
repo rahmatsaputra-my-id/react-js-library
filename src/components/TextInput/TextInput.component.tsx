@@ -2,7 +2,7 @@ import {Text} from '../Text';
 import {View} from '../View';
 import {Colors} from '../../constants/Colors';
 import {ITextInputProps} from './TextInput.types';
-import {useState} from 'react';
+import {useState, useRef, useEffect} from 'react';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {styles} from './TextInput.component.styles';
 import {Image} from '../Image';
@@ -20,7 +20,8 @@ const TextInput: React.FC<ITextInputProps> = ({
   multiline = false,
   padding = 0,
   right = 0,
-  rows = 10,
+  rows = 1,
+  maxRows = 4,
   style = {},
   styleLabel = {},
   styleTextInput = {},
@@ -29,9 +30,11 @@ const TextInput: React.FC<ITextInputProps> = ({
   onChange,
   handleOnScanQr,
   isInputRupiah = false,
+  isInputNumber = false,
   ...props
 }) => {
   const [isScannerVisible, setIsScannerVisible] = useState(false);
+  const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const formatRupiahDisplay = (val: any) => {
     if (!val) return '';
@@ -42,7 +45,16 @@ const TextInput: React.FC<ITextInputProps> = ({
   const parseRupiahValue = (val: any) => val.toString().replace(/\D/g, '');
 
   const handleChange = (event: any) => {
-    const inputVal = event?.target?.value || '';
+    let inputVal = event?.target?.value || '';
+
+    if (isInputNumber) {
+      inputVal = inputVal.replace(/\D/g, '');
+      event.target.value = inputVal;
+    }
+
+    if (multiline && textAreaRef.current) {
+      autoResize(textAreaRef.current);
+    }
 
     if (isInputRupiah) {
       const numericVal = parseRupiahValue(inputVal);
@@ -59,9 +71,28 @@ const TextInput: React.FC<ITextInputProps> = ({
     }
   };
 
+  const autoResize = (el: HTMLTextAreaElement) => {
+    el.style.height = 'auto';
+    const lineHeight = parseInt(
+      window.getComputedStyle(el).lineHeight || '20',
+      10,
+    );
+    const maxHeight = lineHeight * maxRows;
+    const newHeight = Math.min(el.scrollHeight, maxHeight);
+    el.style.height = `${newHeight}px`;
+    el.style.overflowY = el.scrollHeight > maxHeight ? 'auto' : 'hidden';
+  };
+
+  useEffect(() => {
+    if (multiline && textAreaRef.current) {
+      autoResize(textAreaRef.current);
+    }
+  }, [value, multiline]);
+
   const adjustedStyleTextInput = {
     ...styleTextInput,
     paddingRight: handleOnScanQr ? 40 : styleTextInput.paddingRight,
+    resize: 'none',
   };
 
   const stylesTextInput = {
@@ -72,6 +103,8 @@ const TextInput: React.FC<ITextInputProps> = ({
     ...styles.textArea,
     ...adjustedStyleTextInput,
   };
+
+  const inputType = isInputRupiah || isInputNumber ? 'tel' : 'text';
 
   return (
     <>
@@ -92,8 +125,9 @@ const TextInput: React.FC<ITextInputProps> = ({
           <View>
             {multiline ? (
               <textarea
+                ref={textAreaRef}
                 rows={rows}
-                type="text"
+                inputMode={isInputNumber ? 'numeric' : 'text'}
                 style={stylesTextInput}
                 value={isInputRupiah ? formatRupiahDisplay(value) : value ?? ''}
                 onChange={handleChange}
@@ -101,7 +135,8 @@ const TextInput: React.FC<ITextInputProps> = ({
               />
             ) : (
               <input
-                type="text"
+                type={inputType}
+                inputMode={isInputNumber ? 'numeric' : 'text'}
                 style={stylesTextInput}
                 value={isInputRupiah ? formatRupiahDisplay(value) : value ?? ''}
                 onChange={handleChange}
