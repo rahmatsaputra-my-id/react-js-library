@@ -17,6 +17,8 @@ export const Icons: IIconOption = {
   edit: `${PATH.IMAGE}/icon-edit.png`,
   exit: `${PATH.IMAGE}/icon-exit.png`,
   filter: `${PATH.IMAGE}/icon-filter.png`,
+  flag_english: `${PATH.PERSONAL_WEB}/icon/icon_flag_united_states.png`,
+  flag_indonesia: `${PATH.PERSONAL_WEB}/icon/icon_flag_indonesia.png`,
   flash_off: `${PATH.IMAGE}/icon-flash-off.png`,
   flash_on: `${PATH.IMAGE}/icon-flash-on.png`,
   history_transaction: `${PATH.IMAGE}/icon-history-transaction.png`,

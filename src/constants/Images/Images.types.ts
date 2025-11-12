@@ -8,6 +8,8 @@ export interface IIconOption {
   edit?: string
   exit?: string
   filter?: string
+  flag_english?: string
+  flag_indonesia?: string
   flash_off?: string
   flash_on?: string
   history_transaction?: string
