@@ -54,6 +54,12 @@ export interface IColorsOption {
   orange50?: '#FFD8A1';
   palePeach?: '#FFD6A2';
   pink?: '#F2EBEC';
+  pink1?: '#F9DFDE';
+  pink2?: '#F09EA9';
+  pink3?: '#EE869F';
+  pink4?: '#EB6190';
+  pink5?: '#A73775';
+  pink6?: '#6F1C5B';
   platinum?: '#E9E4E4';
   red?: '#D45757';
   red100?: '#FF4C47';
