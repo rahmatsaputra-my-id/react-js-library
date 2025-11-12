@@ -9,7 +9,7 @@ import {Text} from '../../Text';
 const BottomSheetPhoto: React.FC<BottomSheetPhotoProps> = ({
   visible,
   onClose,
-  title = '',
+  title = 'Pilihan',
   onUploadBase64,
 }) => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);

@@ -1,32 +1,44 @@
-import {Icons} from '../../constants/Images';
-import {Image} from '../Image';
+import React, {useState} from 'react';
 import {ImageInputProps} from './ImageInput.component.types';
-import {styles} from './ImageInput.component.styles';
-import {Text} from '../Text';
-import {TouchableOpacity} from '../TouchableOpacity';
 import {View} from '../View';
-import React from 'react';
+import {TouchableOpacity} from '../TouchableOpacity';
+import {styles} from './ImageInput.component.styles';
+import {Image} from '../Image';
+import {Icons} from '../../constants/Images';
+import {Text} from '../Text';
+import {PreviewPhoto} from '../PreviewPhoto';
+import {BottomSheetPhoto} from '../BottomSheetPhoto';
 
 const ImageInput: React.FC<ImageInputProps> = ({
   label,
   subLabel,
   imageUrl = null,
-  handleOnUpload,
-  handleOnPreview,
   containerStyle,
   isMandatory = false,
   isEditAble = false,
+  handleOnPickImage = (_base64?: string) => {},
 }) => {
-  const renderScreen = () => (
+  const [imagePreview, setImagePreview] = useState<string | undefined>(
+    imageUrl ?? undefined,
+  );
+  const [isVisibleBottomSheet, setIsVisibleBottomSheet] =
+    useState<boolean>(false);
+  const [isPreviewVisible, setIsPreviewVisible] = useState<boolean>(false);
+
+  const handleOnUpload = () => setIsVisibleBottomSheet(true);
+  const handleOnPreview = () => setIsPreviewVisible(true);
+
+  return (
     <View style={{...styles.container, ...containerStyle}}>
       <TouchableOpacity
         style={styles.containerImage}
-        onPress={imageUrl ? handleOnPreview : handleOnUpload}>
+        onPress={imagePreview ? handleOnPreview : handleOnUpload}>
         <Image
-          src={imageUrl ? imageUrl : Icons.camera}
-          style={imageUrl ? styles.image : styles.iconCamera}
+          src={imagePreview ? imagePreview : Icons.camera}
+          style={imagePreview ? styles.image : styles.iconCamera}
         />
       </TouchableOpacity>
+
       <View style={styles.containerText}>
         {label && (
           <Text type="bold_16" style={styles.label}>
@@ -37,15 +49,32 @@ const ImageInput: React.FC<ImageInputProps> = ({
         {isMandatory && <Text type="normal_14_red">{'*Wajib'}</Text>}
       </View>
 
-      {isEditAble && imageUrl && (
+      {isEditAble && imagePreview && (
         <TouchableOpacity onPress={handleOnUpload}>
           <Image src={Icons.edit} style={styles.iconEdit} />
         </TouchableOpacity>
       )}
+
+      <PreviewPhoto
+        visible={isPreviewVisible}
+        onDismiss={() => setIsPreviewVisible(false)}
+        imageUrl={imagePreview}
+      />
+
+      <BottomSheetPhoto
+        visible={isVisibleBottomSheet}
+        onClose={() => setIsVisibleBottomSheet(false)}
+        onUploadBase64={(base64: string | ArrayBuffer | null) => {
+          if (typeof base64 === 'string') {
+            setImagePreview(base64);
+            if (typeof handleOnPickImage === 'function') {
+              handleOnPickImage(base64);
+            }
+          }
+        }}
+      />
     </View>
   );
-
-  return renderScreen();
 };
 
 export default ImageInput;
