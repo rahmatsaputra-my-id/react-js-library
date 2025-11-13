@@ -37,4 +37,5 @@ export const Icons: IIconOption = {
   support: `${PATH.IMAGE}/icon-support.png`,
   tax: `${PATH.IMAGE}/icon-tax.png`,
   terms_and_conditions: `${PATH.IMAGE}/icon-terms-and-conditions.png`,
+  wallet: `${PATH.IMAGE}/icon-wallet.png`,
 }
