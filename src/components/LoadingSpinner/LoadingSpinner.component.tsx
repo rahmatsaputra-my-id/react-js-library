@@ -8,15 +8,20 @@ const LoadingSpinner = ({
   loadingType = false,
   loadingIcon = '',
 }: ILoadingSpinnerProps): JSX.Element => {
-  const _renderSpinnerComponent = () => <div className="loading-spinner" />;
+  const renderSpinnerComponent = () => <div className="loading-spinner" />;
 
-  const _renderSpinnerSection = () => (
+  const renderSpinnerSection = () => (
     <View style={styles.loadingSpinnerSectionContainer}>
       <div className="loading-spinner-section" />
     </View>
   );
+  const renderSpinnerSectionS = () => (
+    <View style={styles.loadingSpinnerSectionContainer}>
+      <div className="loading-spinner-section-s" />
+    </View>
+  );
 
-  const _renderSpinnerPage = () => (
+  const renderSpinnerPage = () => (
     <View style={styles.loadingSpinnerPageContainer}>
       <View style={styles.loadingSpinnerPageContent}>
         <div className="loading-spinner-pages" />
@@ -30,10 +35,12 @@ const LoadingSpinner = ({
   return (
     <>
       {loadingType === 'page'
-        ? _renderSpinnerPage()
+        ? renderSpinnerPage()
         : loadingType === 'section'
-        ? _renderSpinnerSection()
-        : _renderSpinnerComponent()}
+        ? renderSpinnerSection()
+        : loadingType === 'section-s'
+        ? renderSpinnerSectionS()
+        : renderSpinnerComponent()}
     </>
   );
 };

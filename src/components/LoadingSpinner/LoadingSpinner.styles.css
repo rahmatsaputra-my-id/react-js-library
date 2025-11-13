@@ -30,6 +30,17 @@
   animation: spinner 1.5s linear infinite;
 }
 
+.loading-spinner-section-s {
+  width: 60px;
+  height: 60px;
+  /* Light grey */
+  border: 10px solid rgb(220, 220, 226);
+  /* Black */
+  border-top: 10px solid #000000;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
 .loading-spinner-pages {
   width: 130px;
   height: 130px;
