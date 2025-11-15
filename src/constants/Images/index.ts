@@ -33,7 +33,7 @@ export const Icons: IIconOption = {
   printer: `${PATH.IMAGE}/icon-printer.png`,
   privilege: `${PATH.IMAGE}/icon-privilege.png`,
   question: `${PATH.IMAGE}/icon-question.png`,
-  role_privilege: `${PATH.IMAGE}/icon-role-privilege-.png`,
+  role_privilege: `${PATH.IMAGE}/icon-role-privilege.png`,
   role: `${PATH.IMAGE}/icon-role.png`,
   rotate: `${PATH.IMAGE}/icon-rotate.png`,
   scan_qr: `${PATH.IMAGE}/icon-scan-qr.png`,
