@@ -19,9 +19,13 @@ export interface IIconOption {
   list?: string
   love_empty?: string
   love_filled?: string
+  member?: string
   more?: string
   printer?: string
+  privilege?: string
   question?: string
+  role_privilege?: string
+  role?: string
   rotate?: string
   scan_qr?: string
   send?: string
@@ -29,4 +33,5 @@ export interface IIconOption {
   tax?: string
   terms_and_conditions?: string
   wallet?: string
+  
 }
