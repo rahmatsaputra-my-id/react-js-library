@@ -33,5 +33,5 @@ export interface IIconOption {
   tax?: string
   terms_and_conditions?: string
   wallet?: string
-  
+  bulk_product?: string
 }
