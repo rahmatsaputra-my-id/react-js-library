@@ -30,7 +30,11 @@ const MultipleImageInput: React.FC<IMultipleImageInput> = ({
   }, [arrImage]);
 
   useEffect(() => {
-    handleSelectedImages?.(images.map(i => ({file: i.file})));
+    const timeout = setTimeout(() => {
+      handleSelectedImages?.(images.map(i => ({file: i.file})));
+    }, 0);
+
+    return () => clearTimeout(timeout);
   }, [images]);
 
   const handleChange = async (base64: string) => {
