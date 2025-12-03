@@ -29,26 +29,26 @@ const MultipleImageInput: React.FC<IMultipleImageInput> = ({
     }
   }, [arrImage]);
 
-  const handleChange = async (e: string) => {
-    const newImages = [{file: e}];
-    setImages((prevImages: any) => {
-      const combined = [...prevImages, ...newImages];
+  useEffect(() => {
+    handleSelectedImages?.(images.map(i => ({file: i.file})));
+  }, [images]);
+
+  const handleChange = async (base64: string) => {
+    const newImage: TImage = {file: base64, src: base64};
+
+    setImages(prev => {
+      const combined = [...prev, newImage];
       const unique = combined.filter(
         (img, idx) => combined.findIndex(i => i.src === img.src) === idx,
       );
-
-      handleSelectedImages(unique.map(i => ({file: i.file})));
-
       return unique;
     });
   };
 
   const removeImage = (index: number) => {
-    setImages(prevImages => {
-      const updated = [...prevImages];
+    setImages(prev => {
+      const updated = [...prev];
       updated.splice(index, 1);
-      handleSelectedImages?.(updated.map(i => ({file: i.file})));
-
       return updated;
     });
   };
@@ -56,6 +56,7 @@ const MultipleImageInput: React.FC<IMultipleImageInput> = ({
   return (
     <>
       <Text style={styles.title}>{label}</Text>
+
       <View style={{...styles.container, ...style}}>
         <div style={styles.card} {...props}>
           <div style={styles.previewContainer}>
