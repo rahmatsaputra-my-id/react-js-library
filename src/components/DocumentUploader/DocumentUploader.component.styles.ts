@@ -1,0 +1,95 @@
+export const styles = {
+  wrapper: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  uploadBox: {
+    border: '1px solid #d1d5db',
+    borderRadius: '12px',
+    backgroundColor: '#f9fafb',
+    textAlign: 'center',
+    paddingBottom: 20,
+  },
+  cloudIcon: {
+    fontSize: '48px',
+    color: '#9ca3af',
+  },
+  title: {
+    color: '#4b5563',
+    marginTop: '8px',
+    fontSize: '16px',
+  },
+  subtitle: {
+    color: '#9ca3af',
+    fontSize: '14px',
+    marginTop: '4px',
+  },
+  noteContainer: {
+    alignItems: 'center',
+  },
+  note: {
+    color: '#9ca3af',
+    marginBottom: 4,
+  },
+  button: {
+    marginTop: '24px',
+    color: 'white',
+    padding: '12px 24px',
+    borderRadius: '8px',
+    fontSize: 14,
+    fontWeight: 500,
+    border: 'none',
+    display: 'inline-block',
+  },
+  hiddenInput: {
+    display: 'none',
+  },
+  error: {
+    marginTop: '16px',
+    color: '#ef4444',
+    fontSize: '14px',
+    paddingLeft: 32,
+    paddingRight: 32,
+  },
+  success: {
+    marginTop: '16px',
+    color: '#229403ff',
+    fontSize: '14px',
+    paddingLeft: 32,
+    paddingRight: 32,
+  },
+  fileListBox: {
+    border: '1px solid #d1d5db',
+    borderRadius: '12px',
+    paddingLeft: 16,
+    paddingRight: 16,
+    backgroundColor: 'white',
+    marginTop: 20,
+  },
+  fileListHeader: {
+    fontSize: '16px',
+    color: '#374151',
+    fontWeight: 600,
+    marginBottom: 10,
+  },
+  fileRow: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  fileName: {
+    color: '#16a34a',
+    fontSize: '14px',
+  },
+  removeButton: {
+    backgroundColor: '#ef4444',
+    color: 'white',
+    border: 'none',
+    padding: '6px 12px',
+    borderRadius: '6px',
+    fontSize: '12px',
+    cursor: 'pointer',
+  },
+} as const;
