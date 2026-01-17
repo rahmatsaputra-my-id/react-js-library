@@ -47,10 +47,6 @@ jobs:
       - name: Build library (Rollup)
         run: npm run build
 
-      - name: Configure npm auth
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-
       - name: Publish to npm
         run: npm publish --access public
         env:
