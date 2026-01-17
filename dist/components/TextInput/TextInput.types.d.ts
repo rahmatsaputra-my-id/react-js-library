@@ -14,11 +14,14 @@ export interface ITextInputProps {
     placeholder?: string;
     right?: number;
     rows?: number;
+    maxRows?: number;
     style?: any;
     styleLabel?: any;
     styleTextInput?: any;
     top?: number;
     type?: string;
     value?: any;
+    isInputRupiah?: boolean;
+    isInputNumber?: boolean;
     handleOnScanQr?: (data?: string | null) => void;
 }

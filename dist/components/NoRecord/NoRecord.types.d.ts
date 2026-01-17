@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
 export interface INoRecordProps {
-    children?: any;
+    title?: string;
     style?: CSSProperties;
 }

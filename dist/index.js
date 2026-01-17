@@ -206,12 +206,13 @@ var styles$e = {
 };
 
 var TouchableOpacity = function (_a) {
-    var children = _a.children, onPress = _a.onPress, style = _a.style, props = __rest(_a, ["children", "onPress", "style"]);
-    var handleOnPress = function () {
-        if (onPress)
-            onPress();
+    var children = _a.children, onPress = _a.onPress, style = _a.style, _b = _a.disabled, disabled = _b === void 0 ? false : _b, props = __rest(_a, ["children", "onPress", "style", "disabled"]);
+    var handleOnPress = function (event) {
+        if (!disabled && onPress) {
+            onPress(event);
+        }
     };
-    return (jsxRuntime.jsx("div", __assign({ onClick: handleOnPress, style: __assign(__assign({}, styles$e.content), style) }, props, { children: children })));
+    return (jsxRuntime.jsx("div", __assign({ onClick: handleOnPress, style: __assign(__assign(__assign({}, styles$e.content), style), { opacity: disabled ? 0.5 : 1, pointerEvents: disabled ? 'none' : 'auto' }) }, props, { children: children })));
 };
 
 var Colors = {
@@ -269,6 +270,12 @@ var Colors = {
     orange50: '#FFD8A1',
     palePeach: '#FFD6A2',
     pink: '#F2EBEC',
+    pink1: '#F9DFDE',
+    pink2: '#F09EA9',
+    pink3: '#EE869F',
+    pink4: '#EB6190',
+    pink5: '#A73775',
+    pink6: '#6F1C5B',
     platinum: '#E9E4E4',
     red: '#D45757',
     red100: '#FF4C47',
@@ -422,25 +429,38 @@ var Icons = {
     arrow_right_thin: "".concat(PATH.IMAGE, "/icon-arrow-right-thin.png"),
     arrow_right: "".concat(PATH.IMAGE, "/icon-arrow-right.png"),
     camera: "".concat(PATH.IMAGE, "/icon-camera.png"),
+    cart: "".concat(PATH.IMAGE, "/icon-cart.png"),
+    checklist_success: "".concat(PATH.IMAGE, "/icon-checklist-success.png"),
     close: "".concat(PATH.WEDDING, "/icon-close.png"),
     edit: "".concat(PATH.IMAGE, "/icon-edit.png"),
     exit: "".concat(PATH.IMAGE, "/icon-exit.png"),
+    filter: "".concat(PATH.IMAGE, "/icon-filter.png"),
+    flag_english: "".concat(PATH.PERSONAL_WEB, "/icon/icon_flag_united_states.png"),
+    flag_indonesia: "".concat(PATH.PERSONAL_WEB, "/icon/icon_flag_indonesia.png"),
     flash_off: "".concat(PATH.IMAGE, "/icon-flash-off.png"),
     flash_on: "".concat(PATH.IMAGE, "/icon-flash-on.png"),
+    history_transaction: "".concat(PATH.IMAGE, "/icon-history-transaction.png"),
     image_not_available: "".concat(PATH.PERSONAL_WEB, "/image-not-available.png"),
     information: "".concat(PATH.IMAGE, "/icon-information.png"),
     langugage: "".concat(PATH.IMAGE, "/icon-language.png"),
+    list: "".concat(PATH.IMAGE, "/icon-list.png"),
+    love_empty: "".concat(PATH.IMAGE, "/icon-love-empty.png"),
+    love_filled: "".concat(PATH.IMAGE, "/icon-love-filled.png"),
+    member: "".concat(PATH.IMAGE, "/icon-member.png"),
     more: "".concat(PATH.IMAGE, "/icon-more.png"),
     printer: "".concat(PATH.IMAGE, "/icon-printer.png"),
+    privilege: "".concat(PATH.IMAGE, "/icon-privilege.png"),
     question: "".concat(PATH.IMAGE, "/icon-question.png"),
+    role_privilege: "".concat(PATH.IMAGE, "/icon-role-privilege.png"),
+    role: "".concat(PATH.IMAGE, "/icon-role.png"),
     rotate: "".concat(PATH.IMAGE, "/icon-rotate.png"),
     scan_qr: "".concat(PATH.IMAGE, "/icon-scan-qr.png"),
     send: "".concat(PATH.IMAGE, "/icon-send.png"),
     support: "".concat(PATH.IMAGE, "/icon-support.png"),
     tax: "".concat(PATH.IMAGE, "/icon-tax.png"),
     terms_and_conditions: "".concat(PATH.IMAGE, "/icon-terms-and-conditions.png"),
-    love_empty: "".concat(PATH.IMAGE, "/icon-love-empty.png"),
-    love_filled: "".concat(PATH.IMAGE, "/icon-love-filled.png"),
+    wallet: "".concat(PATH.IMAGE, "/icon-wallet.png"),
+    bulk_product: "".concat(PATH.IMAGE, "/icon-bulk-product.png"),
 };
 
 var Images = function (_a) {
@@ -841,7 +861,7 @@ var Text = function (_a) {
 };
 
 var BottomSheetPhoto = function (_a) {
-    var visible = _a.visible, onClose = _a.onClose, _b = _a.title, title = _b === void 0 ? '' : _b, onUploadBase64 = _a.onUploadBase64;
+    var visible = _a.visible, onClose = _a.onClose, _b = _a.title, title = _b === void 0 ? 'Pilihan' : _b, onUploadBase64 = _a.onUploadBase64;
     var fileInputRef = react.useRef(null);
     var _c = react.useState(false), cameraVisible = _c[0], setCameraVisible = _c[1];
     var _d = react.useState(20), paddingBottom = _d[0], setPaddingBottom = _d[1];
@@ -994,19 +1014,22 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = "@keyframes spinner {\n  0% {\n    transform: rotate(0deg);\n  }\n\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n.loading-spinner {\n  width: 15px;\n  height: 15px;\n  /* Light grey */\n  border: 4px solid #ffffff;\n  /* Black */\n  border-top: 4px solid #000000;\n  border-radius: 50%;\n  animation: spinner 1s linear infinite;\n}\n\n.loading-spinner-section {\n  width: 120px;\n  height: 120px;\n  /* Light grey */\n  border: 15px solid rgb(220, 220, 226);\n  /* Black */\n  border-top: 15px solid #000000;\n  border-radius: 50%;\n  animation: spinner 1.5s linear infinite;\n}\n\n.loading-spinner-pages {\n  width: 130px;\n  height: 130px;\n  border: 20px solid rgb(220, 220, 226);\n  border-top: 20px solid #000000;\n  border-radius: 50%;\n  animation: spinner 1.5s linear infinite;\n}\n";
+var css_248z = "@keyframes spinner {\n  0% {\n    transform: rotate(0deg);\n  }\n\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n.loading-spinner {\n  width: 15px;\n  height: 15px;\n  /* Light grey */\n  border: 4px solid #ffffff;\n  /* Black */\n  border-top: 4px solid #000000;\n  border-radius: 50%;\n  animation: spinner 1s linear infinite;\n}\n\n.loading-spinner-section {\n  width: 120px;\n  height: 120px;\n  /* Light grey */\n  border: 15px solid rgb(220, 220, 226);\n  /* Black */\n  border-top: 15px solid #000000;\n  border-radius: 50%;\n  animation: spinner 1.5s linear infinite;\n}\n\n.loading-spinner-section-s {\n  width: 60px;\n  height: 60px;\n  /* Light grey */\n  border: 10px solid rgb(220, 220, 226);\n  /* Black */\n  border-top: 10px solid #000000;\n  border-radius: 50%;\n  animation: spinner 1.5s linear infinite;\n}\n\n.loading-spinner-pages {\n  width: 130px;\n  height: 130px;\n  border: 20px solid rgb(220, 220, 226);\n  border-top: 20px solid #000000;\n  border-radius: 50%;\n  animation: spinner 1.5s linear infinite;\n}\n";
 styleInject(css_248z);
 
 var LoadingSpinner = function (_a) {
     var _b = _a.loadingType, loadingType = _b === void 0 ? false : _b, _c = _a.loadingIcon, loadingIcon = _c === void 0 ? '' : _c;
-    var _renderSpinnerComponent = function () { return jsxRuntime.jsx("div", { className: "loading-spinner" }); };
-    var _renderSpinnerSection = function () { return (jsxRuntime.jsx(View, __assign({ style: styles$a.loadingSpinnerSectionContainer }, { children: jsxRuntime.jsx("div", { className: "loading-spinner-section" }) }))); };
-    var _renderSpinnerPage = function () { return (jsxRuntime.jsx(View, __assign({ style: styles$a.loadingSpinnerPageContainer }, { children: jsxRuntime.jsxs(View, __assign({ style: styles$a.loadingSpinnerPageContent }, { children: [jsxRuntime.jsx("div", { className: "loading-spinner-pages" }), loadingIcon ? (jsxRuntime.jsx("img", { style: styles$a.loadingIcon, src: loadingIcon, alt: '' })) : null] })) }))); };
+    var renderSpinnerComponent = function () { return jsxRuntime.jsx("div", { className: "loading-spinner" }); };
+    var renderSpinnerSection = function () { return (jsxRuntime.jsx(View, __assign({ style: styles$a.loadingSpinnerSectionContainer }, { children: jsxRuntime.jsx("div", { className: "loading-spinner-section" }) }))); };
+    var renderSpinnerSectionS = function () { return (jsxRuntime.jsx(View, __assign({ style: styles$a.loadingSpinnerSectionContainer }, { children: jsxRuntime.jsx("div", { className: "loading-spinner-section-s" }) }))); };
+    var renderSpinnerPage = function () { return (jsxRuntime.jsx(View, __assign({ style: styles$a.loadingSpinnerPageContainer }, { children: jsxRuntime.jsxs(View, __assign({ style: styles$a.loadingSpinnerPageContent }, { children: [jsxRuntime.jsx("div", { className: "loading-spinner-pages" }), loadingIcon ? (jsxRuntime.jsx("img", { style: styles$a.loadingIcon, src: loadingIcon, alt: '' })) : null] })) }))); };
     return (jsxRuntime.jsx(jsxRuntime.Fragment, { children: loadingType === 'page'
-            ? _renderSpinnerPage()
+            ? renderSpinnerPage()
             : loadingType === 'section'
-                ? _renderSpinnerSection()
-                : _renderSpinnerComponent() }));
+                ? renderSpinnerSection()
+                : loadingType === 'section-s'
+                    ? renderSpinnerSectionS()
+                    : renderSpinnerComponent() }));
 };
 
 var Button = function (_a) {
@@ -1177,12 +1200,6 @@ var styles$7 = {
     },
 };
 
-var ImageInput = function (_a) {
-    var label = _a.label, subLabel = _a.subLabel, _b = _a.imageUrl, imageUrl = _b === void 0 ? null : _b, handleOnUpload = _a.handleOnUpload, handleOnPreview = _a.handleOnPreview, containerStyle = _a.containerStyle, _c = _a.isMandatory, isMandatory = _c === void 0 ? false : _c, _d = _a.isEditAble, isEditAble = _d === void 0 ? false : _d;
-    var renderScreen = function () { return (jsxRuntime.jsxs(View, __assign({ style: __assign(__assign({}, styles$7.container), containerStyle) }, { children: [jsxRuntime.jsx(TouchableOpacity, __assign({ style: styles$7.containerImage, onPress: imageUrl ? handleOnPreview : handleOnUpload }, { children: jsxRuntime.jsx(Images, { src: imageUrl ? imageUrl : Icons.camera, style: imageUrl ? styles$7.image : styles$7.iconCamera }) })), jsxRuntime.jsxs(View, __assign({ style: styles$7.containerText }, { children: [label && (jsxRuntime.jsx(Text, __assign({ type: "bold_16", style: styles$7.label }, { children: label }))), subLabel && jsxRuntime.jsx(Text, { children: subLabel }), isMandatory && jsxRuntime.jsx(Text, __assign({ type: "normal_14_red" }, { children: '*Wajib' }))] })), isEditAble && imageUrl && (jsxRuntime.jsx(TouchableOpacity, __assign({ onPress: handleOnUpload }, { children: jsxRuntime.jsx(Images, { src: Icons.edit, style: styles$7.iconEdit }) })))] }))); };
-    return renderScreen();
-};
-
 var styles$6 = {
     backdrop: {
         position: 'fixed',
@@ -1239,6 +1256,23 @@ var PhotoPreviewModal = function (_a) {
                     currentTarget.onerror = null;
                     currentTarget.src = Icons.image_not_available;
                 }, style: styles$6.image })) : (jsxRuntime.jsx("p", __assign({ style: styles$6.noImageContainer }, { children: "No image provided" }))) })) })), document.body);
+};
+
+var ImageInput = function (_a) {
+    var label = _a.label, subLabel = _a.subLabel, _b = _a.imageUrl, imageUrl = _b === void 0 ? null : _b, containerStyle = _a.containerStyle, _c = _a.isMandatory, isMandatory = _c === void 0 ? false : _c, _d = _a.isEditAble, isEditAble = _d === void 0 ? false : _d, _e = _a.handleOnPickImage, handleOnPickImage = _e === void 0 ? function (_base64) { } : _e;
+    var _f = react.useState(imageUrl !== null && imageUrl !== void 0 ? imageUrl : undefined), imagePreview = _f[0], setImagePreview = _f[1];
+    var _g = react.useState(false), isVisibleBottomSheet = _g[0], setIsVisibleBottomSheet = _g[1];
+    var _h = react.useState(false), isPreviewVisible = _h[0], setIsPreviewVisible = _h[1];
+    var handleOnUpload = function () { return setIsVisibleBottomSheet(true); };
+    var handleOnPreview = function () { return setIsPreviewVisible(true); };
+    return (jsxRuntime.jsxs(View, __assign({ style: __assign(__assign({}, styles$7.container), containerStyle) }, { children: [jsxRuntime.jsx(TouchableOpacity, __assign({ style: styles$7.containerImage, onPress: imagePreview ? handleOnPreview : handleOnUpload }, { children: jsxRuntime.jsx(Images, { src: imagePreview ? imagePreview : Icons.camera, style: imagePreview ? styles$7.image : styles$7.iconCamera }) })), jsxRuntime.jsxs(View, __assign({ style: styles$7.containerText }, { children: [label && (jsxRuntime.jsx(Text, __assign({ type: "bold_16", style: styles$7.label }, { children: label }))), subLabel && jsxRuntime.jsx(Text, { children: subLabel }), isMandatory && jsxRuntime.jsx(Text, __assign({ type: "normal_14_red" }, { children: '*Wajib' }))] })), isEditAble && imagePreview && (jsxRuntime.jsx(TouchableOpacity, __assign({ onPress: handleOnUpload }, { children: jsxRuntime.jsx(Images, { src: Icons.edit, style: styles$7.iconEdit }) }))), jsxRuntime.jsx(PhotoPreviewModal, { visible: isPreviewVisible, onDismiss: function () { return setIsPreviewVisible(false); }, imageUrl: imagePreview }), jsxRuntime.jsx(BottomSheetPhoto, { visible: isVisibleBottomSheet, onClose: function () { return setIsVisibleBottomSheet(false); }, onUploadBase64: function (base64) {
+                    if (typeof base64 === 'string') {
+                        setImagePreview(base64);
+                        if (typeof handleOnPickImage === 'function') {
+                            handleOnPickImage(base64);
+                        }
+                    }
+                } })] })));
 };
 
 var styles$5 = {
@@ -1492,8 +1526,8 @@ var styles$3 = {
 };
 
 var NoRecord = function (_a) {
-    _a.children; var _b = _a.style, style = _b === void 0 ? {} : _b, props = __rest(_a, ["children", "style"]);
-    return (jsxRuntime.jsx(View, __assign({ style: __assign(__assign({}, styles$3.container), style) }, props, { children: jsxRuntime.jsx(Text, { children: 'No Record Found' }) })));
+    var title = _a.title, _b = _a.style, style = _b === void 0 ? {} : _b, props = __rest(_a, ["title", "style"]);
+    return (jsxRuntime.jsx(View, __assign({ style: __assign(__assign({}, styles$3.container), style) }, props, { children: jsxRuntime.jsx(Text, { children: title !== null && title !== void 0 ? title : 'No Record Found' }) })));
 };
 
 var styles$2 = {
@@ -30218,12 +30252,53 @@ var styles = {
 };
 
 var TextInput = function (_a) {
-    var _b = _a.borderColor, borderColor = _b === void 0 ? Colors.grey2 : _b, _c = _a.borderRadius, borderRadius = _c === void 0 ? 4 : _c, _d = _a.bottom, bottom = _d === void 0 ? 0 : _d, _e = _a.center, center = _e === void 0 ? false : _e, _f = _a.label, label = _f === void 0 ? false : _f, _g = _a.labelError, labelError = _g === void 0 ? false : _g, _h = _a.left, left = _h === void 0 ? 0 : _h, _j = _a.multiline, multiline = _j === void 0 ? false : _j, _k = _a.padding, padding = _k === void 0 ? 0 : _k, _l = _a.right, right = _l === void 0 ? 0 : _l, _m = _a.rows, rows = _m === void 0 ? 10 : _m, _o = _a.style, style = _o === void 0 ? {} : _o, _p = _a.styleLabel, styleLabel = _p === void 0 ? {} : _p, _q = _a.styleTextInput, styleTextInput = _q === void 0 ? {} : _q, _r = _a.top, top = _r === void 0 ? 0 : _r, value = _a.value, onChange = _a.onChange, handleOnScanQr = _a.handleOnScanQr, props = __rest(_a, ["borderColor", "borderRadius", "bottom", "center", "label", "labelError", "left", "multiline", "padding", "right", "rows", "style", "styleLabel", "styleTextInput", "top", "value", "onChange", "handleOnScanQr"]);
-    var _s = react.useState(false), isScannerVisible = _s[0], setIsScannerVisible = _s[1];
-    // Add paddingRight if QR scanner button exists
-    var adjustedStyleTextInput = __assign(__assign({}, styleTextInput), { paddingRight: handleOnScanQr ? 40 : styleTextInput.paddingRight });
+    var _b = _a.borderColor, borderColor = _b === void 0 ? Colors.grey2 : _b, _c = _a.borderRadius, borderRadius = _c === void 0 ? 4 : _c, _d = _a.bottom, bottom = _d === void 0 ? 0 : _d, _e = _a.center, center = _e === void 0 ? false : _e, _f = _a.label, label = _f === void 0 ? false : _f, _g = _a.labelError, labelError = _g === void 0 ? false : _g, _h = _a.left, left = _h === void 0 ? 0 : _h, _j = _a.multiline, multiline = _j === void 0 ? false : _j, _k = _a.padding, padding = _k === void 0 ? 0 : _k, _l = _a.right, right = _l === void 0 ? 0 : _l, _m = _a.rows, rows = _m === void 0 ? 1 : _m, _o = _a.maxRows, maxRows = _o === void 0 ? 4 : _o, _p = _a.style, style = _p === void 0 ? {} : _p, _q = _a.styleLabel, styleLabel = _q === void 0 ? {} : _q, _r = _a.styleTextInput, styleTextInput = _r === void 0 ? {} : _r, _s = _a.top, top = _s === void 0 ? 0 : _s, value = _a.value, onChange = _a.onChange, handleOnScanQr = _a.handleOnScanQr, _t = _a.isInputRupiah, isInputRupiah = _t === void 0 ? false : _t, _u = _a.isInputNumber, isInputNumber = _u === void 0 ? false : _u, props = __rest(_a, ["borderColor", "borderRadius", "bottom", "center", "label", "labelError", "left", "multiline", "padding", "right", "rows", "maxRows", "style", "styleLabel", "styleTextInput", "top", "value", "onChange", "handleOnScanQr", "isInputRupiah", "isInputNumber"]);
+    var _v = react.useState(false), isScannerVisible = _v[0], setIsScannerVisible = _v[1];
+    var textAreaRef = react.useRef(null);
+    var formatRupiahDisplay = function (val) {
+        if (!val)
+            return '';
+        var clean = val.toString().replace(/\D/g, '');
+        return clean.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    };
+    var parseRupiahValue = function (val) { return val.toString().replace(/\D/g, ''); };
+    var handleChange = function (event) {
+        var _a;
+        var inputVal = ((_a = event === null || event === void 0 ? void 0 : event.target) === null || _a === void 0 ? void 0 : _a.value) || '';
+        if (isInputNumber) {
+            inputVal = inputVal.replace(/\D/g, '');
+            event.target.value = inputVal;
+        }
+        if (multiline && textAreaRef.current) {
+            autoResize(textAreaRef.current);
+        }
+        if (isInputRupiah) {
+            var numericVal = parseRupiahValue(inputVal);
+            var formatted = formatRupiahDisplay(numericVal);
+            event.target.value = formatted;
+            onChange(__assign(__assign({}, event), { target: __assign(__assign({}, event.target), { value: numericVal }) }));
+        }
+        else {
+            onChange(event);
+        }
+    };
+    var autoResize = function (el) {
+        el.style.height = 'auto';
+        var lineHeight = parseInt(window.getComputedStyle(el).lineHeight || '20', 10);
+        var maxHeight = lineHeight * maxRows;
+        var newHeight = Math.min(el.scrollHeight, maxHeight);
+        el.style.height = "".concat(newHeight, "px");
+        el.style.overflowY = el.scrollHeight > maxHeight ? 'auto' : 'hidden';
+    };
+    react.useEffect(function () {
+        if (multiline && textAreaRef.current) {
+            autoResize(textAreaRef.current);
+        }
+    }, [value, multiline]);
+    var adjustedStyleTextInput = __assign(__assign({}, styleTextInput), { paddingRight: handleOnScanQr ? 40 : styleTextInput.paddingRight, resize: 'none' });
     var stylesTextInput = __assign(__assign({ borderColor: borderColor, borderRadius: borderRadius, textAlign: center ? 'center' : 'left', paddingBottom: multiline ? 16 : 8 }, styles.textArea), adjustedStyleTextInput);
-    return (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [jsxRuntime.jsxs(View, __assign({ style: styles.container }, { children: [jsxRuntime.jsxs(View, __assign({ style: __assign({ marginTop: top, marginRight: right, marginBottom: bottom, marginLeft: left, padding: padding }, style) }, { children: [label && (jsxRuntime.jsx(Text, { style: __assign(__assign({}, styles.label), styleLabel), children: label })), jsxRuntime.jsx(View, { children: multiline ? (jsxRuntime.jsx("textarea", __assign({ rows: rows, type: 'text', style: stylesTextInput, value: value, onChange: onChange }, props))) : (jsxRuntime.jsx("input", __assign({ type: 'text', value: value, onChange: onChange, style: stylesTextInput }, props))) }), labelError ? (jsxRuntime.jsx(Text, { style: styles.labelError, children: labelError })) : null] })), handleOnScanQr && (jsxRuntime.jsx(TouchableOpacity, __assign({ style: label
+    var inputType = isInputRupiah || isInputNumber ? 'tel' : 'text';
+    return (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [jsxRuntime.jsxs(View, __assign({ style: styles.container }, { children: [jsxRuntime.jsxs(View, __assign({ style: __assign({ marginTop: top, marginRight: right, marginBottom: bottom, marginLeft: left, padding: padding }, style) }, { children: [label && (jsxRuntime.jsx(Text, { style: __assign(__assign({}, styles.label), styleLabel), children: label })), jsxRuntime.jsx(View, { children: multiline ? (jsxRuntime.jsx("textarea", __assign({ ref: textAreaRef, rows: rows, inputMode: isInputNumber ? 'numeric' : 'text', style: stylesTextInput, value: isInputRupiah ? formatRupiahDisplay(value) : value !== null && value !== void 0 ? value : '', onChange: handleChange }, props))) : (jsxRuntime.jsx("input", __assign({ type: inputType, inputMode: isInputNumber ? 'numeric' : 'text', style: stylesTextInput, value: isInputRupiah ? formatRupiahDisplay(value) : value !== null && value !== void 0 ? value : '', onChange: handleChange }, props))) }), labelError ? (jsxRuntime.jsx(Text, { style: styles.labelError, children: labelError })) : null] })), handleOnScanQr && (jsxRuntime.jsx(TouchableOpacity, __assign({ style: label
                             ? styles.scanQrImageContainerWithLabel
                             : styles.scanQrImageContainer, onPress: function () {
                             handleOnScanQr();

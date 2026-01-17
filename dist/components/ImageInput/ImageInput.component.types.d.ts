@@ -1,10 +1,9 @@
 export interface ImageInputProps {
     label?: string;
     subLabel?: string;
-    imageUrl?: string | null;
-    handleOnUpload: () => void;
-    handleOnPreview: () => void;
+    imageUrl?: string;
     containerStyle?: any;
     isMandatory?: boolean;
     isEditAble?: boolean;
+    handleOnPickImage: () => void;
 }
