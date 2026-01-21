@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.65](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.64...v0.0.65) (2026-01-21)
+
+
+### Features
+
+* update radio button component ([46dc737](https://github.com/rahmatsaputra-my-id/react-js-library/commit/46dc73780559d70f02b34ce853db6f4931a6174b))
+
 ### [0.0.64](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.63...v0.0.64) (2026-01-17)
 
 
