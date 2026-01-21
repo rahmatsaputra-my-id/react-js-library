@@ -1,10 +1,10 @@
 import React from 'react';
 import {TouchableOpacity} from '../TouchableOpacity';
-import {SingleRadioButtonProps} from './RadioButton.types';
-import {styles} from './RadioButton.styles';
+import {RadioButtonSingleProps} from './RadioButtonSingle.types';
+import {styles} from './RadioButtonSingle.component.styles';
 import {View} from '../View';
 
-const SingleRadioButton: React.FC<SingleRadioButtonProps> = ({
+const RadioButtonSingle: React.FC<RadioButtonSingleProps> = ({
   value,
   handleChange,
   selectedOption,
@@ -29,4 +29,4 @@ const SingleRadioButton: React.FC<SingleRadioButtonProps> = ({
   );
 };
 
-export {SingleRadioButton};
+export default RadioButtonSingle;

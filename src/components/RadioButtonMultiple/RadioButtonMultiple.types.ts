@@ -5,7 +5,7 @@ export interface SingleRadioButtonProps {
   children: React.ReactNode;
 }
 
-export interface RadioButtonProps {
+export interface RadioButtonMultipleProps {
   label: string;
   options: Array<{ [key: string]: any }>;
   selectedValue: string | number;

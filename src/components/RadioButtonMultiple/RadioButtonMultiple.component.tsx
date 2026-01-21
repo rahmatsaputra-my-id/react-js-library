@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {RadioButtonProps} from './RadioButton.types';
+import {RadioButtonMultipleProps} from './RadioButtonMultiple.types';
 import {View} from '../View';
 import {Text} from '../Text';
-import {SingleRadioButton} from './SingleRadioButton.component';
-import {styles} from './RadioButton.styles';
+import {styles} from './RadioButtonMultiple.component.styles';
+import {RadioButtonSingle} from '../RadioButtonSingle';
 
-const RadioButton: React.FC<RadioButtonProps> = ({
+const RadioButtonMultiple: React.FC<RadioButtonMultipleProps> = ({
   label,
   options = [],
   selectedValue,
@@ -31,7 +31,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
       </Text>
 
       {options.map((item, index) => (
-        <SingleRadioButton
+        <RadioButtonSingle
           key={item[keyField] || index}
           value={item[valueField]}
           selectedOption={selectedOption}
@@ -41,10 +41,10 @@ const RadioButton: React.FC<RadioButtonProps> = ({
           ) : (
             <Text type="normal_14">{item[valueField]}</Text>
           )}
-        </SingleRadioButton>
+        </RadioButtonSingle>
       ))}
     </View>
   );
 };
 
-export default RadioButton;
+export default RadioButtonMultiple;
