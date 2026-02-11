@@ -5,6 +5,7 @@ export const styles = {
     display: 'flex',
     marginBottom: '10px',
     flexDirection: 'row',
+    alignItems: 'center'
   },
   outterBullet: {
     width: 20,
