@@ -1,6 +1,7 @@
 export interface IIconOption {
   arrow_right_thin?: string
   arrow_right?: string
+  bulk_product?: string
   camera?: string
   cart?: string
   checklist_success?: string
@@ -21,6 +22,7 @@ export interface IIconOption {
   love_filled?: string
   member?: string
   more?: string
+  outlet?: string
   printer?: string
   privilege?: string
   question?: string
@@ -33,5 +35,4 @@ export interface IIconOption {
   tax?: string
   terms_and_conditions?: string
   wallet?: string
-  bulk_product?: string
 }

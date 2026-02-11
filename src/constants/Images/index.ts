@@ -10,6 +10,7 @@ const PATH = {
 export const Icons: IIconOption = {
   arrow_right_thin: `${PATH.IMAGE}/icon-arrow-right-thin.png`,
   arrow_right: `${PATH.IMAGE}/icon-arrow-right.png`,
+  bulk_product: `${PATH.IMAGE}/icon-bulk-product.png`,
   camera: `${PATH.IMAGE}/icon-camera.png`,
   cart: `${PATH.IMAGE}/icon-cart.png`,
   checklist_success: `${PATH.IMAGE}/icon-checklist-success.png`,
@@ -30,6 +31,7 @@ export const Icons: IIconOption = {
   love_filled: `${PATH.IMAGE}/icon-love-filled.png`,
   member: `${PATH.IMAGE}/icon-member.png`,
   more: `${PATH.IMAGE}/icon-more.png`,
+  outlet: `${PATH.IMAGE}/icon-outlet.png`,
   printer: `${PATH.IMAGE}/icon-printer.png`,
   privilege: `${PATH.IMAGE}/icon-privilege.png`,
   question: `${PATH.IMAGE}/icon-question.png`,
@@ -42,5 +44,4 @@ export const Icons: IIconOption = {
   tax: `${PATH.IMAGE}/icon-tax.png`,
   terms_and_conditions: `${PATH.IMAGE}/icon-terms-and-conditions.png`,
   wallet: `${PATH.IMAGE}/icon-wallet.png`,
-  bulk_product: `${PATH.IMAGE}/icon-bulk-product.png`,
 }
