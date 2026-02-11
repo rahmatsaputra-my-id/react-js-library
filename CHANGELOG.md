@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.67](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.66...v0.0.67) (2026-02-11)
+
+
+### Features
+
+* add icon outlet ([0bc54f5](https://github.com/rahmatsaputra-my-id/react-js-library/commit/0bc54f58a56d752088788d3c370183c59c4d3009))
+
 ### [0.0.66](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.65...v0.0.66) (2026-02-11)
 
 
