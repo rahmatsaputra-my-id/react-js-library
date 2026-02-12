@@ -2,6 +2,7 @@ import {Text} from '../Text';
 import {View} from '../View';
 import {styles} from './Switch.styles';
 import {SwitchProps} from './Switch.types';
+import './Switch.styles.css';
 
 const Switch = ({
   label = '',
