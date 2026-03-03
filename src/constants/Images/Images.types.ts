@@ -1,4 +1,5 @@
 export interface IIconOption {
+  arrow_left_black?: string
   arrow_right_thin?: string
   arrow_right?: string
   bulk_product?: string

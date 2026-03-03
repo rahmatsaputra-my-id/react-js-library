@@ -8,6 +8,7 @@ const PATH = {
 }
 
 export const Icons: IIconOption = {
+  arrow_left_black: `${PATH.IMAGE}/icon-arrow-left-black.png`,
   arrow_right_thin: `${PATH.IMAGE}/icon-arrow-right-thin.png`,
   arrow_right: `${PATH.IMAGE}/icon-arrow-right.png`,
   bulk_product: `${PATH.IMAGE}/icon-bulk-product.png`,
