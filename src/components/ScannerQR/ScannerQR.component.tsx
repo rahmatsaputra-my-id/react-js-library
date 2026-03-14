@@ -5,12 +5,12 @@ import {cameraStyles} from './ScannerQR.component.styles';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {Image} from '../Image';
 import {View} from '../View';
-import {Icons} from '../../constants/Images';
 import {
   BrowserMultiFormatReader,
   DecodeHintType,
   BarcodeFormat,
 } from '@zxing/library';
+import {ICONS} from '@rahmatsaputra-my-id/global-assets';
 
 const ScannerCamera: FC<ScannerCameraProps> = ({onClose, onCapture}) => {
   // Tentukan tipe untuk useRef
@@ -114,9 +114,8 @@ const ScannerCamera: FC<ScannerCameraProps> = ({onClose, onCapture}) => {
         },
       };
 
-      const stream: MediaStream = await navigator.mediaDevices.getUserMedia(
-        constraints,
-      );
+      const stream: MediaStream =
+        await navigator.mediaDevices.getUserMedia(constraints);
       const video = videoRef.current;
       const codeReader = codeReaderRef.current;
 
@@ -269,7 +268,7 @@ const ScannerCamera: FC<ScannerCameraProps> = ({onClose, onCapture}) => {
           }>
           <View style={cameraStyles.captureRotateButton as React.CSSProperties}>
             <Image
-              src={Icons.rotate}
+              src={ICONS.rotate}
               style={cameraStyles.rotateButton as React.CSSProperties}
             />
           </View>

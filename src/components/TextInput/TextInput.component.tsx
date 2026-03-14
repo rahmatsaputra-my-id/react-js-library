@@ -6,8 +6,8 @@ import {useState, useRef, useEffect} from 'react';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {styles} from './TextInput.component.styles';
 import {Image} from '../Image';
-import {Icons} from '../../constants/Images';
 import {ScannerQR} from '../ScannerQR';
+import {ICONS} from '@rahmatsaputra-my-id/global-assets';
 
 const TextInput: React.FC<ITextInputProps> = ({
   borderColor = Colors.grey2,
@@ -129,7 +129,9 @@ const TextInput: React.FC<ITextInputProps> = ({
                 rows={rows}
                 inputMode={isInputNumber ? 'numeric' : 'text'}
                 style={stylesTextInput}
-                value={isInputRupiah ? formatRupiahDisplay(value) : value ?? ''}
+                value={
+                  isInputRupiah ? formatRupiahDisplay(value) : (value ?? '')
+                }
                 onChange={handleChange}
                 {...props}
               />
@@ -138,7 +140,9 @@ const TextInput: React.FC<ITextInputProps> = ({
                 type={inputType}
                 inputMode={isInputNumber ? 'numeric' : 'text'}
                 style={stylesTextInput}
-                value={isInputRupiah ? formatRupiahDisplay(value) : value ?? ''}
+                value={
+                  isInputRupiah ? formatRupiahDisplay(value) : (value ?? '')
+                }
                 onChange={handleChange}
                 {...props}
               />
@@ -161,7 +165,7 @@ const TextInput: React.FC<ITextInputProps> = ({
               handleOnScanQr();
               setIsScannerVisible(true);
             }}>
-            <Image style={styles.scanQrImage} src={Icons.scan_qr} />
+            <Image style={styles.scanQrImage} src={ICONS.scan_qr} />
           </TouchableOpacity>
         )}
       </View>

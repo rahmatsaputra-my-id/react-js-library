@@ -2,7 +2,7 @@ import {useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import {styles} from './PreviewPhoto.styles';
 import {IPreviewPhotoProps} from './PreviewPhoto.types';
-import {Icons} from '../../constants/Images';
+import {IMAGES} from '@rahmatsaputra-my-id/global-assets';
 
 const PhotoPreviewModal = ({
   visible,
@@ -34,7 +34,7 @@ const PhotoPreviewModal = ({
             alt={''}
             onError={({currentTarget}) => {
               currentTarget.onerror = null;
-              currentTarget.src = Icons.image_not_available;
+              currentTarget.src = IMAGES.image_not_available;
             }}
             style={styles.image}
           />

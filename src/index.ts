@@ -26,4 +26,3 @@ export * from './components/TextInput';
 export * from './components/TouchableOpacity';
 export * from './components/View';
 export * from './constants/Colors';
-export * from './constants/Images';

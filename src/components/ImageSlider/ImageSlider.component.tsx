@@ -1,10 +1,10 @@
 import React, {useState, useRef} from 'react';
-import {Icons} from '../../constants/Images';
 import {Image} from '../Image';
 import {PreviewPhoto} from '../PreviewPhoto';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {IImageSlider} from './ImageSlider.types';
 import {styles} from './ImageSlider.component.styles';
+import {IMAGES} from '@rahmatsaputra-my-id/global-assets';
 
 const ImageSlider: React.FC<IImageSlider> = ({images, style}) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -94,7 +94,7 @@ const ImageSlider: React.FC<IImageSlider> = ({images, style}) => {
             draggable={false}
             onError={({currentTarget}) => {
               currentTarget.onerror = null;
-              currentTarget.src = Icons.image_not_available;
+              currentTarget.src = IMAGES.image_not_available;
             }}
           />
           <div style={styles.counter}>
@@ -111,7 +111,7 @@ const ImageSlider: React.FC<IImageSlider> = ({images, style}) => {
         imageUrl={
           images.length > 0
             ? images?.[currentIndex]?.file
-            : Icons.image_not_available
+            : IMAGES.image_not_available
         }
       />
     </>

@@ -4,10 +4,10 @@ import {View} from '../View';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {styles} from './ImageInput.component.styles';
 import {Image} from '../Image';
-import {Icons} from '../../constants/Images';
 import {Text} from '../Text';
 import {PreviewPhoto} from '../PreviewPhoto';
 import {BottomSheetPhoto} from '../BottomSheetPhoto';
+import {ICONS} from '@rahmatsaputra-my-id/global-assets';
 
 const ImageInput: React.FC<ImageInputProps> = ({
   label,
@@ -34,7 +34,7 @@ const ImageInput: React.FC<ImageInputProps> = ({
         style={styles.containerImage}
         onPress={imagePreview ? handleOnPreview : handleOnUpload}>
         <Image
-          src={imagePreview ? imagePreview : Icons.camera}
+          src={imagePreview ? imagePreview : ICONS.camera}
           style={imagePreview ? styles.image : styles.iconCamera}
         />
       </TouchableOpacity>
@@ -51,7 +51,7 @@ const ImageInput: React.FC<ImageInputProps> = ({
 
       {isEditAble && imagePreview && (
         <TouchableOpacity onPress={handleOnUpload}>
-          <Image src={Icons.edit} style={styles.iconEdit} />
+          <Image src={ICONS.edit} style={styles.iconEdit} />
         </TouchableOpacity>
       )}
 
