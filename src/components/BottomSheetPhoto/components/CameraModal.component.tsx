@@ -5,7 +5,7 @@ import {TouchableOpacity} from '../../TouchableOpacity';
 import {cameraStyles} from '../styles/CameraModal.component.style';
 import {View} from '../../View';
 import {Image} from '../../Image';
-import {ICONS} from '@rahmatsaputra-my-id/global-assets';
+import {icons} from '@rahmatsaputra-my-id/global-assets';
 
 const CameraModal: React.FC<CameraModalProps> = ({onClose, onCapture}) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -169,7 +169,7 @@ const CameraModal: React.FC<CameraModalProps> = ({onClose, onCapture}) => {
             style={cameraStyles.floatingBottomButtons}>
             <View style={cameraStyles.captureButton}>
               <View style={cameraStyles.innerButton}>
-                <Image src={ICONS.send} style={cameraStyles.sendButton} />
+                <Image src={icons.send} style={cameraStyles.sendButton} />
               </View>
             </View>
           </TouchableOpacity>
@@ -202,7 +202,7 @@ const CameraModal: React.FC<CameraModalProps> = ({onClose, onCapture}) => {
                   style={cameraStyles.floatingBottomRotateButtons}>
                   <View style={cameraStyles.captureRotateButton}>
                     <Image
-                      src={ICONS.rotate}
+                      src={icons.rotate}
                       style={cameraStyles.rotateButton}
                     />
                   </View>

@@ -7,7 +7,7 @@ import {TouchableOpacity} from '../TouchableOpacity';
 import {styles} from './TextInput.component.styles';
 import {Image} from '../Image';
 import {ScannerQR} from '../ScannerQR';
-import {ICONS} from '@rahmatsaputra-my-id/global-assets';
+import {icons} from '@rahmatsaputra-my-id/global-assets';
 
 const TextInput: React.FC<ITextInputProps> = ({
   borderColor = Colors.grey2,
@@ -165,7 +165,7 @@ const TextInput: React.FC<ITextInputProps> = ({
               handleOnScanQr();
               setIsScannerVisible(true);
             }}>
-            <Image style={styles.scanQrImage} src={ICONS.scan_qr} />
+            <Image style={styles.scanQrImage} src={icons.scan_qr} />
           </TouchableOpacity>
         )}
       </View>

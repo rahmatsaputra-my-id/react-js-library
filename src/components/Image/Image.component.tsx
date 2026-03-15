@@ -1,4 +1,4 @@
-import {IMAGES} from '@rahmatsaputra-my-id/global-assets';
+import {images} from '@rahmatsaputra-my-id/global-assets';
 import {IImageProps} from './Image.types';
 
 const Images = ({
@@ -28,7 +28,7 @@ const Images = ({
     alt={''}
     onError={({currentTarget}) => {
       currentTarget.onerror = null;
-      currentTarget.src = IMAGES.image_not_available;
+      currentTarget.src = images.image_not_available;
     }}
     {...props}
   />

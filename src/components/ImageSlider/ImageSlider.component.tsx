@@ -4,7 +4,7 @@ import {PreviewPhoto} from '../PreviewPhoto';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {IImageSlider} from './ImageSlider.types';
 import {styles} from './ImageSlider.component.styles';
-import {IMAGES} from '@rahmatsaputra-my-id/global-assets';
+import {images as IMAGES} from '@rahmatsaputra-my-id/global-assets';
 
 const ImageSlider: React.FC<IImageSlider> = ({images, style}) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);

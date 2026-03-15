@@ -26,7 +26,7 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "@rahmatsaputra-my-id/global-assets": "^1.0.3",
+    "@rahmatsaputra-my-id/global-assets": "^0.0.14",
     "@zxing/library": "^0.21.3"
   },
   "devDependencies": {

@@ -10,7 +10,7 @@ import {
   DecodeHintType,
   BarcodeFormat,
 } from '@zxing/library';
-import {ICONS} from '@rahmatsaputra-my-id/global-assets';
+import {icons} from '@rahmatsaputra-my-id/global-assets';
 
 const ScannerCamera: FC<ScannerCameraProps> = ({onClose, onCapture}) => {
   // Tentukan tipe untuk useRef
@@ -268,7 +268,7 @@ const ScannerCamera: FC<ScannerCameraProps> = ({onClose, onCapture}) => {
           }>
           <View style={cameraStyles.captureRotateButton as React.CSSProperties}>
             <Image
-              src={ICONS.rotate}
+              src={icons.rotate}
               style={cameraStyles.rotateButton as React.CSSProperties}
             />
           </View>

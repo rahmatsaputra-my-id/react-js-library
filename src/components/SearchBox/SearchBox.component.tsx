@@ -7,7 +7,7 @@ import {Text} from '../Text';
 import {TextInput} from '../TextInput';
 import {Image} from '../Image';
 import {ScannerQR} from '../ScannerQR';
-import {ICONS} from '@rahmatsaputra-my-id/global-assets';
+import {icons} from '@rahmatsaputra-my-id/global-assets';
 
 const SearchBox = ({
   handleOnSubmitSearch,
@@ -60,7 +60,7 @@ const SearchBox = ({
                 ...styles.closeSearchButtonImage,
                 paddingRight: handleOnScanQr ? 48 : 16,
               }}
-              src={ICONS.close ?? ''}
+              src={icons.close ?? ''}
             />
           </TouchableOpacity>
         )}
@@ -72,7 +72,7 @@ const SearchBox = ({
               handleOnScanQr();
               setIsScannerVisible(true);
             }}>
-            <Image style={styles.scanQrImage} src={ICONS.scan_qr} />
+            <Image style={styles.scanQrImage} src={icons.scan_qr} />
           </TouchableOpacity>
         )}
       </View>
