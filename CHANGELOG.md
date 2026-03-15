@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.73](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.72...v0.0.73) (2026-03-15)
+
 ### [0.0.72](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.71...v0.0.72) (2026-03-14)
 
 
