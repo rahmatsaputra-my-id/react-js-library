@@ -1,4 +1,4 @@
-import { Colors } from '../../constants/Colors';
+import { colors } from '@rahmatsaputra-my-id/global-assets';
 
 export const styles = {
   containerWithBorder: {
@@ -7,10 +7,10 @@ export const styles = {
     justifyContent: 'space-between',
     marginTop: 16,
     marginBottom: 16,
-    backgroundColor: Colors.white,
+    backgroundColor: colors.white,
     padding: 8,
     borderRadius: 4,
-    border: `0.5px solid ${Colors.grey80}`,
+    border: `0.5px solid ${colors.lightGray}`,
   },
   container: {
     display: 'flex',
