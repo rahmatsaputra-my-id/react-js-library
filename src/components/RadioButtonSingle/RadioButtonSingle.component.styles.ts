@@ -1,4 +1,4 @@
-import { Colors } from '../../constants/Colors';
+import { colors } from '@rahmatsaputra-my-id/global-assets';
 
 export const styles = {
   singleRadioContainer: {
@@ -13,7 +13,7 @@ export const styles = {
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Colors.white,
+    backgroundColor: colors.white,
     marginRight: 8,
     border: '1px solid rgba(0, 0, 0, 0.6)',
   },
@@ -22,13 +22,13 @@ export const styles = {
     width: 12,
     height: 12,
     borderRadius: 6,
-    backgroundColor: Colors.black100,
+    backgroundColor: colors.black,
   },
 
   innerBulletNotActive: {
     width: 12,
     height: 12,
     borderRadius: 6,
-    backgroundColor: Colors.white,
+    backgroundColor: colors.white,
   },
 };

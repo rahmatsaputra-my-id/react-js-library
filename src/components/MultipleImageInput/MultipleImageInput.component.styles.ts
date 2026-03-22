@@ -1,9 +1,10 @@
-import {Colors} from '../../constants/Colors';
+import { colors } from "@rahmatsaputra-my-id/global-assets";
+import { withOpacity } from "@rahmatsaputra-my-id/global-assets/dist/COLORS";
 
 export const styles: any = {
   container: {
     padding: 16,
-    backgroundColor: Colors.white,
+    backgroundColor: colors.white,
     borderRadius: 8,
     marginBottom: 16,
   },
@@ -53,7 +54,7 @@ export const styles: any = {
     position: 'absolute',
     top: '4px',
     right: '4px',
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: withOpacity(colors.black, 0.5),
     border: 'none',
     borderRadius: '50%',
     color: 'white',
@@ -69,7 +70,7 @@ export const styles: any = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    backgroundColor:  withOpacity(colors.black, 0.4),
     border: 'none',
     borderRadius: '50%',
     color: '#fff',

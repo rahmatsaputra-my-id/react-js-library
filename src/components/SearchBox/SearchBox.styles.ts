@@ -1,5 +1,5 @@
+import { colors } from '@rahmatsaputra-my-id/global-assets';
 import type { CSSProperties } from 'react';
-import { Colors } from '../../constants/Colors';
 
 export const styles: Record<string, CSSProperties> = {
   textInputContainer: {
@@ -16,7 +16,7 @@ export const styles: Record<string, CSSProperties> = {
     position: 'absolute',
     right: 0,
     height: 38,
-    color: Colors.black,
+    color: colors.black,
     justifyContent: 'center',
     zIndex: 4,
   },

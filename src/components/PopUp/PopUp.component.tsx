@@ -4,10 +4,10 @@ import {Button} from '../Button';
 
 import {IPopUpProps} from './PopUp.types';
 import {styles} from './PopUp.component.styles';
-import {Colors} from '../../constants/Colors';
+import {colors} from '@rahmatsaputra-my-id/global-assets';
 
 const PopUp = ({
-  backgroundButtonColor = Colors.black,
+  backgroundButtonColor = colors.black,
   isLoading = false,
   popUpData,
   visible = false,
@@ -33,7 +33,7 @@ const PopUp = ({
             <Button
               style={styles.buttonNegative}
               backgroundColor={backgroundButtonColor}
-              outlineColor={Colors.black}
+              outlineColor={colors.black}
               isLoading={isLoading}
               label={popUpData.labelDecline}
               onPress={popUpData.onPressDecline}

@@ -1,4 +1,4 @@
-import {Colors} from '../../constants/Colors';
+import {colors} from '@rahmatsaputra-my-id/global-assets';
 import {styles} from './Text.styles';
 import {ITextProps} from './Text.types';
 
@@ -6,7 +6,7 @@ const Text = ({
   bottom = 0,
   center = false,
   children,
-  color = Colors.black,
+  color = colors.black,
   left = 0,
   right = 0,
   style = {},

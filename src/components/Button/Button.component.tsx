@@ -1,11 +1,11 @@
-import {Colors} from '../../constants/Colors';
 import {styles} from './Button.component.styles';
 import {LoadingSpinner} from '../LoadingSpinner';
 
 import {IButtonProps} from './Button.types';
+import {colors} from '@rahmatsaputra-my-id/global-assets';
 
 const Button = ({
-  backgroundColor = Colors.black,
+  backgroundColor = colors.black,
   bold = false,
   borderRadius = 8,
   bottom = 0,
@@ -29,15 +29,15 @@ const Button = ({
       style={{
         backgroundColor:
           disabled || isLoading
-            ? Colors.grey2
+            ? colors.lightGray
             : transparent || outlineColor
-            ? 'transparent'
-            : backgroundColor
-            ? backgroundColor
-            : Colors.black,
+              ? 'transparent'
+              : backgroundColor
+                ? backgroundColor
+                : colors.black,
         border: outlineColor ? '1px solid rgba(0, 0, 0, 1)' : 'none',
         borderRadius,
-        color: outlineColor ? outlineColor : Colors.white,
+        color: outlineColor ? outlineColor : colors.white,
         fontSize: size,
         fontWeight: bold && 'bold',
         marginBottom: bottom,

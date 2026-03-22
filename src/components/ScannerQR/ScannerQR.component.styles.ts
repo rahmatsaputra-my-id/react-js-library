@@ -1,4 +1,5 @@
-import {Colors} from '../../constants/Colors';
+import { colors } from "@rahmatsaputra-my-id/global-assets";
+import { withOpacity } from "@rahmatsaputra-my-id/global-assets/dist/COLORS";
 
 export const cameraStyles = {
   overlay: {
@@ -7,7 +8,7 @@ export const cameraStyles = {
     left: 0,
     height: '100vh',
     width: '100vw',
-    backgroundColor: Colors.black,
+    backgroundColor: colors.black,
     zIndex: 2000,
     overflow: 'hidden',
   },
@@ -21,8 +22,8 @@ export const cameraStyles = {
     top: 20,
     right: 20,
     fontSize: 24,
-    backgroundColor: Colors.blackTransparent5,
-    color: Colors.white,
+    backgroundColor: withOpacity(colors.black, 0.5),
+    color: colors.white,
     border: 'none',
     borderRadius: '50%',
     width: 36,
@@ -40,7 +41,7 @@ export const cameraStyles = {
   captureRotateButton: {
     height: 50,
     width: 50,
-    backgroundColor: Colors.white,
+    backgroundColor: colors.white,
     borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',

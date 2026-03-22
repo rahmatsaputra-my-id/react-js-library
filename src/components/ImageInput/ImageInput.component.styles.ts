@@ -1,19 +1,19 @@
-import {Colors} from '../../constants/Colors';
+import { colors, withOpacity } from "@rahmatsaputra-my-id/global-assets/dist/COLORS";
 
 export const styles = {
   container: {
     borderRadius: 8,
     paddingRight: 16,
-    border: `2px solid ${Colors.brownTransparent}`,
+    border: `2px solid ${withOpacity(colors.brown, 0.6)}`,
     flexDirection: 'row',
-    backgroundColor: Colors.white,
+    backgroundColor: colors.white,
   },
   containerImage: {
     height: 80,
     width: 80,
     borderTopLeftRadius: 8,
     borderBottomLeftRadius: 8,
-    backgroundColor: Colors.grey1,
+    backgroundColor: colors.gray,
     justifyContent: 'center',
     alignItems: 'center',
   },

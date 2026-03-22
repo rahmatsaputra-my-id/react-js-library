@@ -27,7 +27,8 @@
   },
   "dependencies": {
     "@rahmatsaputra-my-id/global-assets": "^0.0.14",
-    "@zxing/library": "^0.21.3"
+    "@zxing/library": "^0.21.3",
+    "iconsax-reactjs": "^0.0.8"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",

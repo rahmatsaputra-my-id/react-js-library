@@ -1,4 +1,4 @@
-import { Colors } from "../../constants/Colors";
+import { colors } from "@rahmatsaputra-my-id/global-assets";
 
 export const styles = {
   h1: {
@@ -23,7 +23,7 @@ export const styles = {
     fontSize: 10,
   },
   normal_10_grey: {
-    color: Colors.grey5,
+    color: colors.gray,
     fontSize: 10,
   },
   bold_10: {
@@ -34,15 +34,15 @@ export const styles = {
     fontSize: 12,
   },
   normal_12_blue: {
-    color: Colors.blue,
+    color: colors.blue,
     fontSize: 12,
   },
   normal_12_grey: {
-    color: Colors.grey5,
+    color: colors.gray,
     fontSize: 12,
   },
   normal_12_red: {
-    color: Colors.red,
+    color: colors.red,
     fontSize: 12,
   },
   bold_12: {
@@ -53,7 +53,7 @@ export const styles = {
     fontSize: 14,
   },
   normal_14_red: {
-    color: Colors.red,
+    color: colors.red,
     fontSize: 14,
   },
   bold_14: {
@@ -82,7 +82,7 @@ export const styles = {
     fontWeight: 'bold',
   },
   bold_20_white: {
-    color: Colors.white,
+    color: colors.white,
     fontSize: 20,
     fontWeight: 'bold',
   },
@@ -171,7 +171,7 @@ export const styles = {
     fontWeight: 'bold',
   },
   bold_80_white: {
-    color: Colors.white,
+    color: colors.white,
     fontSize: 80,
     fontWeight: 'bold',
   },

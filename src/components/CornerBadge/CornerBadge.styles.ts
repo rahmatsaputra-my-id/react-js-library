@@ -1,4 +1,4 @@
-import { Colors } from '../../constants/Colors';
+import { colors } from '@rahmatsaputra-my-id/global-assets';
 
 export const styles = {
   badgeContainer: {
@@ -19,8 +19,8 @@ export const styles = {
     left: -28,
     top: 10,
     transform: 'rotate(-45deg)',
-    background: `linear-gradient(145deg, ${Colors.red60}, ${Colors.red})`,
-    color: Colors.white,
+    background: `linear-gradient(145deg, ${colors.red[400]}, ${colors.red[600]})`,
+    color: colors.white,
     paddingLeft: 30,
     paddingRight: 30,
     paddingTop: 2,

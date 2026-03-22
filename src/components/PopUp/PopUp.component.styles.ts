@@ -1,4 +1,5 @@
-import {Colors} from '../../constants/Colors';
+import { colors } from '@rahmatsaputra-my-id/global-assets';
+import { withOpacity } from '@rahmatsaputra-my-id/global-assets/dist/COLORS';
 
 export const styles = {
   container: {
@@ -10,14 +11,14 @@ export const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 5,
-    backgroundColor: Colors.blackTransparent8,
+    backgroundColor: withOpacity(colors.black, 0.8),
   },
   card: {
     maxWidth: '60%',
-    boxShadow: Colors.boxShadow,
+    boxShadow: `1px 2px 9px ${colors.black}`,
     padding: 24,
     borderRadius: 8,
-    backgroundColor: Colors.grey7,
+    backgroundColor: colors.gray,
     width: 300,
     justifyContent: 'space-between',
   },

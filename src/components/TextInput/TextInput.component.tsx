@@ -1,16 +1,17 @@
 import {Text} from '../Text';
 import {View} from '../View';
-import {Colors} from '../../constants/Colors';
+// import {Colors} from '../../constants/Colors';
 import {ITextInputProps} from './TextInput.types';
 import {useState, useRef, useEffect} from 'react';
 import {TouchableOpacity} from '../TouchableOpacity';
 import {styles} from './TextInput.component.styles';
 import {Image} from '../Image';
 import {ScannerQR} from '../ScannerQR';
-import {icons} from '@rahmatsaputra-my-id/global-assets';
+import {colors, icons} from '@rahmatsaputra-my-id/global-assets';
+import {Icon} from '../Icon';
 
 const TextInput: React.FC<ITextInputProps> = ({
-  borderColor = Colors.grey2,
+  borderColor = colors.gray,
   borderRadius = 4,
   bottom = 0,
   center = false,
@@ -31,9 +32,12 @@ const TextInput: React.FC<ITextInputProps> = ({
   handleOnScanQr,
   isInputRupiah = false,
   isInputNumber = false,
+  isInputPaswword = false,
   ...props
 }) => {
   const [isScannerVisible, setIsScannerVisible] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const formatRupiahDisplay = (val: any) => {
@@ -104,7 +108,13 @@ const TextInput: React.FC<ITextInputProps> = ({
     ...adjustedStyleTextInput,
   };
 
-  const inputType = isInputRupiah || isInputNumber ? 'tel' : 'text';
+  const inputType = isInputPaswword
+    ? showPassword
+      ? 'text'
+      : 'password'
+    : isInputRupiah || isInputNumber
+      ? 'tel'
+      : 'text';
 
   return (
     <>
@@ -146,6 +156,14 @@ const TextInput: React.FC<ITextInputProps> = ({
                 onChange={handleChange}
                 {...props}
               />
+            )}
+
+            {isInputPaswword && (
+              <TouchableOpacity
+                style={styles.eye}
+                onPress={() => setShowPassword(prev => !prev)}>
+                <Icon size={20} name={showPassword ? 'Eye' : 'EyeSlash'} />
+              </TouchableOpacity>
             )}
           </View>
 

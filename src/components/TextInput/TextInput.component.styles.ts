@@ -1,4 +1,4 @@
-import {Colors} from '../../constants/Colors';
+import { colors } from '@rahmatsaputra-my-id/global-assets';
 
 export const styles = {
   label: {
@@ -8,7 +8,7 @@ export const styles = {
   labelError: {
     marginTop: 2,
     fontSize: 16,
-    color: Colors.red,
+    color: colors.red,
     maxWidth: 300,
   },
   textArea: {
@@ -26,7 +26,7 @@ export const styles = {
     position: 'relative',
   },
   scanQrImageContainer: {
-    color: Colors.black,
+    color: colors.black,
     height: 36,
     justifyContent: 'center',
     paddingRight: 12,
@@ -35,7 +35,7 @@ export const styles = {
     zIndex: 4,
   },
   scanQrImageContainerWithLabel: {
-    color: Colors.black,
+    color: colors.black,
     height: 36,
     justifyContent: 'center',
     paddingRight: 12,
@@ -48,4 +48,10 @@ export const styles = {
     height: 24,
     width: 24,
   },
+  eye:{
+    position: 'absolute',
+    right: 10,
+    top: '50%',
+    transform: 'translateY(-50%)',
+  }
 };

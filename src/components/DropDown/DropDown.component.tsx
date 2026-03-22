@@ -1,10 +1,10 @@
-import {Colors} from '../../constants/Colors';
+import {colors} from '@rahmatsaputra-my-id/global-assets';
 import {IDropDownProps} from './DropDown.types';
 
 const DropDown = ({
-  backgroundColor = Colors.darkBlue,
+  backgroundColor = colors.blue[600],
   bottom = 0,
-  color = Colors.grey2,
+  color = colors.gray,
   fontSize = 12,
   id = 'dropdown',
   left = 0,

@@ -1,5 +1,6 @@
-import {Colors} from '../../../constants/Colors';
+import { colors } from '@rahmatsaputra-my-id/global-assets';
 import { StyleMap } from '../../BottomSheet/BottomSheet.component.types';
+import { withOpacity } from '@rahmatsaputra-my-id/global-assets/dist/COLORS';
 
 export const cameraStyles: StyleMap = {
   overlay: {
@@ -8,7 +9,7 @@ export const cameraStyles: StyleMap = {
     left: 0,
     height: '100vh',
     width: '100vw',
-    backgroundColor: Colors.black,
+    backgroundColor: colors.black,
     zIndex: 2000,
     overflow: 'hidden',
   },
@@ -27,8 +28,8 @@ export const cameraStyles: StyleMap = {
     top: 20,
     right: 20,
     fontSize: 24,
-    backgroundColor: Colors.blackTransparent5,
-    color: Colors.white,
+    backgroundColor: withOpacity(colors.black, 0.5),
+    color: colors.white,
     border: 'none',
     borderRadius: '50%',
     width: 36,
@@ -40,13 +41,13 @@ export const cameraStyles: StyleMap = {
   sendButtonContainer: {
     height: 70,
     width: 70,
-    backgroundColor: Colors.white,
+    backgroundColor: colors.white,
     border: 'none',
     borderRadius: 100,
     cursor: 'pointer',
     justifyContent: 'center',
     alignItems: 'center',
-    boxShadow: `0 4px 10px ${Colors.blackTransparent3}`,
+    boxShadow: `0 4px 10px ${withOpacity(colors.black, 0.3)}`,
   },
   sendButton: {
     height: 28,
@@ -68,7 +69,7 @@ export const cameraStyles: StyleMap = {
   captureButton: {
     height: 70,
     width: 70,
-    backgroundColor: Colors.white,
+    backgroundColor: colors.white,
     borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',
@@ -76,17 +77,17 @@ export const cameraStyles: StyleMap = {
   innerButton: {
     height: 60,
     width: 60,
-    backgroundColor: Colors.white,
+    backgroundColor: colors.white,
     borderRadius: 100,
-    border: `1px solid ${Colors.blackTransparent6}`,
-    boxShadow: `0 4px 10px ${Colors.blackTransparent3}`,
+    border: `1px solid ${withOpacity(colors.black, 0.6)}`,
+    boxShadow: `0 4px 10px ${withOpacity(colors.black, 0.3)}`,
     justifyContent: 'center',
     alignItems: 'center',
   },
   captureRotateButton: {
     height: 50,
     width: 50,
-    backgroundColor: Colors.white,
+    backgroundColor: colors.white,
     borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',

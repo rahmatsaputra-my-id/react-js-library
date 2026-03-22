@@ -1,5 +1,6 @@
-import React from "react";
-import { Colors } from "../../constants/Colors";
+import { colors } from '@rahmatsaputra-my-id/global-assets';
+import { withOpacity } from '@rahmatsaputra-my-id/global-assets/dist/COLORS';
+import React from 'react';
 
 export const styles: {[key: string]: React.CSSProperties} = {
   backdrop: {
@@ -8,7 +9,7 @@ export const styles: {[key: string]: React.CSSProperties} = {
     left: 0,
     width: '100vw',
     height: '100vh',
-    backgroundColor: Colors.blackTransparent85,
+    backgroundColor: withOpacity(colors.black, 0.85),
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -17,7 +18,7 @@ export const styles: {[key: string]: React.CSSProperties} = {
   modalContent: {
     width: '90%',
     height: '70%',
-    backgroundColor: Colors.black,
+    backgroundColor: colors.black,
     borderRadius: 8,
     overflow: 'hidden',
     display: 'flex',
@@ -30,7 +31,7 @@ export const styles: {[key: string]: React.CSSProperties} = {
     objectFit: 'contain',
   },
   noImageContainer: {
-    color:Colors.white,
+    color: colors.white,
     textAlign: 'center'
   }
 };
