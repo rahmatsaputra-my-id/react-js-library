@@ -103,6 +103,7 @@ const TextInput: React.FC<ITextInputProps> = ({
     borderRadius,
     textAlign: center ? 'center' : 'left',
     paddingBottom: multiline ? 16 : 8,
+    flex: 1,
     ...styles.textArea,
     ...adjustedStyleTextInput,
   };
@@ -131,7 +132,7 @@ const TextInput: React.FC<ITextInputProps> = ({
             <Text style={{...styles.label, ...styleLabel}} children={label} />
           )}
 
-          <View>
+          <View style={styles.textInputEyesContainer}>
             {multiline ? (
               <textarea
                 {...props}
@@ -161,7 +162,11 @@ const TextInput: React.FC<ITextInputProps> = ({
               <TouchableOpacity
                 style={styles.eye}
                 onPress={() => setShowPassword(prev => !prev)}>
-                <Icon size={20} name={showPassword ? 'Eye' : 'EyeSlash'} />
+                <Icon
+                  size={20}
+                  name={showPassword ? 'Eye' : 'EyeSlash'}
+                  color={'black'}
+                />
               </TouchableOpacity>
             )}
           </View>

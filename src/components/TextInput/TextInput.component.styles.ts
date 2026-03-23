@@ -48,10 +48,13 @@ export const styles = {
     height: 24,
     width: 24,
   },
+  textInputEyesContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+  },
   eye:{
     position: 'absolute',
     right: 10,
-    top: '45%',
-    transform: 'translateY(-50%)',
   }
 };
