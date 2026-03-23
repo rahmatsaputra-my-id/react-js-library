@@ -23,6 +23,6 @@ export interface ITextInputProps {
   value?: any;
   isInputRupiah?: boolean;
   isInputNumber?: boolean;
-  isInputPaswword?: boolean;
+  isInputPassword?: boolean;
   handleOnScanQr?: (data?: string | null) => void;
 }
