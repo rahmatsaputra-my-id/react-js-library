@@ -31,7 +31,7 @@ const TextInput: React.FC<ITextInputProps> = ({
   handleOnScanQr,
   isInputRupiah = false,
   isInputNumber = false,
-  isInputPaswword = false,
+  isInputPassword = false,
   ...props
 }) => {
   const [isScannerVisible, setIsScannerVisible] = useState(false);
@@ -108,7 +108,7 @@ const TextInput: React.FC<ITextInputProps> = ({
     ...adjustedStyleTextInput,
   };
 
-  const inputType = isInputPaswword
+  const inputType = isInputPassword
     ? showPassword
       ? 'text'
       : 'password'
@@ -158,7 +158,7 @@ const TextInput: React.FC<ITextInputProps> = ({
               />
             )}
 
-            {isInputPaswword && (
+            {isInputPassword && (
               <TouchableOpacity
                 style={styles.eye}
                 onPress={() => setShowPassword(prev => !prev)}>
