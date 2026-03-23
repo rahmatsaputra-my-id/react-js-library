@@ -1,6 +1,5 @@
 import {Text} from '../Text';
 import {View} from '../View';
-// import {Colors} from '../../constants/Colors';
 import {ITextInputProps} from './TextInput.types';
 import {useState, useRef, useEffect} from 'react';
 import {TouchableOpacity} from '../TouchableOpacity';
@@ -135,6 +134,7 @@ const TextInput: React.FC<ITextInputProps> = ({
           <View>
             {multiline ? (
               <textarea
+                {...props}
                 ref={textAreaRef}
                 rows={rows}
                 inputMode={isInputNumber ? 'numeric' : 'text'}
@@ -143,10 +143,10 @@ const TextInput: React.FC<ITextInputProps> = ({
                   isInputRupiah ? formatRupiahDisplay(value) : (value ?? '')
                 }
                 onChange={handleChange}
-                {...props}
               />
             ) : (
               <input
+                {...props}
                 type={inputType}
                 inputMode={isInputNumber ? 'numeric' : 'text'}
                 style={stylesTextInput}
@@ -154,7 +154,6 @@ const TextInput: React.FC<ITextInputProps> = ({
                   isInputRupiah ? formatRupiahDisplay(value) : (value ?? '')
                 }
                 onChange={handleChange}
-                {...props}
               />
             )}
 

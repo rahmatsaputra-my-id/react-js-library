@@ -51,7 +51,7 @@ export const styles = {
   eye:{
     position: 'absolute',
     right: 10,
-    top: '50%',
+    top: '45%',
     transform: 'translateY(-50%)',
   }
 };
