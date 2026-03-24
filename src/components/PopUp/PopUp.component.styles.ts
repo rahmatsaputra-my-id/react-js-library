@@ -26,6 +26,7 @@ export const styles = {
     marginBottom: 16,
     fontWeight: 'bold',
     fontSize: 24,
+    textAlign:'center'
   },
   headerDescription: {
     alignSelf: 'center',
