@@ -1,6 +1,6 @@
 {
   "name": "@rahmatsaputra-my-id/react-js-library",
-  "version": "0.0.81",
+  "version": "0.0.82",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "private": false,
