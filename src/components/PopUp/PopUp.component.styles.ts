@@ -15,10 +15,9 @@ export const styles = {
   },
   card: {
     maxWidth: '60%',
-    boxShadow: `1px 2px 9px ${colors.black}`,
     padding: 24,
     borderRadius: 8,
-    backgroundColor: colors.gray,
+    backgroundColor: colors.white,
     width: 300,
     justifyContent: 'space-between',
   },
