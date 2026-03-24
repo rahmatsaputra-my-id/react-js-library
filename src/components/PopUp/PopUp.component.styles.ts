@@ -31,6 +31,7 @@ export const styles = {
     alignSelf: 'center',
     marginBottom: 50,
     fontSize: 18,
+    textAlign:'center'
   },
   buttonPositive: {
     width: '100%',
