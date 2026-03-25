@@ -13,7 +13,7 @@ export const styles = {
     width: 80,
     borderTopLeftRadius: 8,
     borderBottomLeftRadius: 8,
-    backgroundColor: colors.gray,
+    backgroundColor: colors.lightGray,
     justifyContent: 'center',
     alignItems: 'center',
   },
