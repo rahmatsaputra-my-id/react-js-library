@@ -108,13 +108,38 @@ const TextInput: React.FC<ITextInputProps> = ({
     ...adjustedStyleTextInput,
   };
 
-  const inputType = isInputPassword
-    ? showPassword
-      ? 'text'
-      : 'password'
-    : isInputRupiah || isInputNumber
-      ? 'tel'
-      : 'text';
+  const commonProps = {
+    ...props,
+    style: stylesTextInput,
+    value: isInputRupiah ? formatRupiahDisplay(value) : (value ?? ''),
+    onChange: handleChange,
+    inputMode: isInputNumber ? ('numeric' as const) : ('text' as const),
+  };
+
+  const renderInput = () => {
+    if (multiline) {
+      return <textarea ref={textAreaRef} rows={rows} {...commonProps} />;
+    }
+
+    if (isInputPassword) {
+      return (
+        <View style={styles.textInputEyesContainer}>
+          <input {...commonProps} type={showPassword ? 'text' : 'password'} />
+          <TouchableOpacity
+            style={styles.eye}
+            onPress={() => setShowPassword(prev => !prev)}>
+            <Icon
+              size={20}
+              name={showPassword ? 'Eye' : 'EyeSlash'}
+              color="black"
+            />
+          </TouchableOpacity>
+        </View>
+      );
+    }
+
+    return <input {...commonProps} type="text" />;
+  };
 
   return (
     <>
@@ -132,44 +157,7 @@ const TextInput: React.FC<ITextInputProps> = ({
             <Text style={{...styles.label, ...styleLabel}} children={label} />
           )}
 
-          <View style={styles.textInputEyesContainer}>
-            {multiline ? (
-              <textarea
-                {...props}
-                ref={textAreaRef}
-                rows={rows}
-                inputMode={isInputNumber ? 'numeric' : 'text'}
-                style={stylesTextInput}
-                value={
-                  isInputRupiah ? formatRupiahDisplay(value) : (value ?? '')
-                }
-                onChange={handleChange}
-              />
-            ) : (
-              <input
-                {...props}
-                type={inputType}
-                inputMode={isInputNumber ? 'numeric' : 'text'}
-                style={stylesTextInput}
-                value={
-                  isInputRupiah ? formatRupiahDisplay(value) : (value ?? '')
-                }
-                onChange={handleChange}
-              />
-            )}
-
-            {isInputPassword && (
-              <TouchableOpacity
-                style={styles.eye}
-                onPress={() => setShowPassword(prev => !prev)}>
-                <Icon
-                  size={20}
-                  name={showPassword ? 'Eye' : 'EyeSlash'}
-                  color={'black'}
-                />
-              </TouchableOpacity>
-            )}
-          </View>
+          {renderInput()}
 
           {labelError ? (
             <Text style={styles.labelError} children={labelError} />
