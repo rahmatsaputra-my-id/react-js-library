@@ -9,7 +9,7 @@ import {images as IMAGES} from '@rahmatsaputra-my-id/global-assets';
 const ImageSlider: React.FC<IImageSlider> = ({
   images,
   style,
-  showIndicator,
+  showIndicator = true,
 }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isPreviewVisible, setIsPreviewVisible] = useState<boolean>(false);
