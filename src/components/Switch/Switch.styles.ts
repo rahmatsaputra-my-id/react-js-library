@@ -10,7 +10,7 @@ export const styles = {
     backgroundColor: colors.white,
     padding: 8,
     borderRadius: 4,
-    border: `3px solid ${colors.lightGray}`,
+    border: `2px solid ${colors.black}`,
   },
   container: {
     display: 'flex',
