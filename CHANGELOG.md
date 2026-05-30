@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.90](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.89...v0.0.90) (2026-05-30)
+
+
+### Features
+
+* update image slider ([cd9dbbd](https://github.com/rahmatsaputra-my-id/react-js-library/commit/cd9dbbddfd3b9821b89319c5745be7207ebdf7bc))
+
 ### [0.0.89](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.88...v0.0.89) (2026-05-30)
 
 
