@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.85](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.84...v0.0.85) (2026-05-30)
+
+
+### Features
+
+* update switch ([d5bf21c](https://github.com/rahmatsaputra-my-id/react-js-library/commit/d5bf21c3747b1d3fd00a70215a829cc323467e92))
+
 ### [0.0.84](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.83...v0.0.84) (2026-03-25)
 
 
