@@ -6,7 +6,11 @@ import {IImageSlider} from './ImageSlider.types';
 import {styles} from './ImageSlider.component.styles';
 import {images as IMAGES} from '@rahmatsaputra-my-id/global-assets';
 
-const ImageSlider: React.FC<IImageSlider> = ({images, style}) => {
+const ImageSlider: React.FC<IImageSlider> = ({
+  images,
+  style,
+  showIndicator,
+}) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isPreviewVisible, setIsPreviewVisible] = useState<boolean>(false);
   const startX = useRef<number>(0);
@@ -97,9 +101,11 @@ const ImageSlider: React.FC<IImageSlider> = ({images, style}) => {
               currentTarget.src = IMAGES.image_not_available;
             }}
           />
-          <div style={styles.counter}>
-            {currentIndex + 1} / {images.length}
-          </div>
+          {showIndicator && (
+            <div style={styles.counter}>
+              {currentIndex + 1} / {images.length}
+            </div>
+          )}
         </TouchableOpacity>
       ) : (
         <Image src={''} style={{...styles.imageNotAvailable, ...style}} />
