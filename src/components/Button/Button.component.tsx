@@ -13,14 +13,14 @@ const Button = ({
   isLoading = false,
   label,
   left = 0,
-  onPress,
+  onPress = () => {},
   padding = 16,
   right = 0,
   size = 16,
   style = {},
   top = 0,
   transparent = false,
-  outlineColor,
+  outlineColor = false,
   ...props
 }: IButtonProps): JSX.Element => {
   const isDisabled = disabled || isLoading;
@@ -34,8 +34,6 @@ const Button = ({
   })();
 
   const buttonStyle: React.CSSProperties = {
-    ...styles.content,
-    ...style,
     backgroundColor: computedBackgroundColor,
     border: isOutline ? `1px solid ${outlineColor}` : 'none',
     borderRadius,
@@ -46,9 +44,11 @@ const Button = ({
     marginRight: right,
     marginBottom: bottom,
     marginLeft: left,
-    outline: 'none',
+    outline: !outlineColor && 'none',
     padding,
     textAlign: center ? 'center' : 'left',
+    ...style,
+    ...styles.content,
   };
 
   return (
