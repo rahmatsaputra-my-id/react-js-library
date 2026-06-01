@@ -101,7 +101,7 @@ const ImageSlider: React.FC<IImageSlider> = ({
               currentTarget.src = IMAGES.image_not_available;
             }}
           />
-          {showIndicator && (
+          {showIndicator && images?.length > 0 && (
             <div style={styles.counter}>
               {currentIndex + 1} / {images.length}
             </div>
