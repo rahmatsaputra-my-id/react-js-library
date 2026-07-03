@@ -11,12 +11,12 @@ export default {
   input: "src/index.ts",
   output: [
     {
-      file: packageJson.main,
+      file: "dist/index.js",
       format: "cjs",
       sourcemap: true,
     },
     {
-      file: packageJson.module,
+      file: "dist/index.es.js",
       format: "esm",
       sourcemap: true,
     },

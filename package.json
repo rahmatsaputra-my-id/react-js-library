@@ -3,6 +3,7 @@
   "version": "0.0.94",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "private": false,
   "files": [
     "dist"
@@ -12,6 +13,7 @@
     "build": "npm run clean && rollup -c",
     "release": "standard-version",
     "build:publish": "npm run build && npm publish",
+    "prepublishOnly": "npm run build",
     "ci:release": "npx standard-version && git push --follow-tags origin master && npm run build && npm publish"
   },
   "repository": {

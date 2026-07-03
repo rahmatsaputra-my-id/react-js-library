@@ -29,7 +29,13 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Build library (Rollup)
+        run: npm run build
+
+      - name: Verify dist exists
+        run: ls -la dist
 
       - name: Configure git user
         run: |
@@ -45,9 +51,6 @@ jobs:
         run: git push --follow-tags origin master
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
-      - name: Build library (Rollup)
-        run: npm run build
 
       - name: Publish to npm
         run: npm publish --access public
