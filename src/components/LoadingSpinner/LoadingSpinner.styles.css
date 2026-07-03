@@ -52,6 +52,17 @@
   animation: spinner 1.5s linear infinite;
 }
 
+.loading-spinner-button {
+  width: 15px;
+  height: 15px;
+  /* Light grey */
+  border: 3px solid rgb(220, 220, 226);
+  /* Black */
+  border-top: 3px solid #000000;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
 .loading-spinner-pages {
   width: 130px;
   height: 130px;

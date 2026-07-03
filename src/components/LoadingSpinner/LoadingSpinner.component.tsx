@@ -45,7 +45,7 @@ const LoadingSpinner = ({
       return renderSection('loading-spinner-section-xs');
 
     case 'button':
-      return renderButton('loading-spinner-section-xs');
+      return renderButton('loading-spinner-button');
 
     default:
       return <div className="loading-spinner" />;
