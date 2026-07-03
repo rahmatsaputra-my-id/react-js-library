@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.94](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.93...v0.0.94) (2026-07-03)
+
+
+### Bug Fixes
+
+* adjust component button ([3295d8c](https://github.com/rahmatsaputra-my-id/react-js-library/commit/3295d8c72adc19c1d1ce5783815a5e3db15307d8))
+
 ### [0.0.93](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.92...v0.0.93) (2026-06-01)
 
 
