@@ -58,7 +58,7 @@ const Button = ({
       onClick={onPress}
       style={buttonStyle}
       {...props}>
-      {isLoading ? <LoadingSpinner loadingType={'section-s'} /> : label}
+      {isLoading ? <LoadingSpinner loadingType={'button'} /> : label}
     </button>
   );
 };

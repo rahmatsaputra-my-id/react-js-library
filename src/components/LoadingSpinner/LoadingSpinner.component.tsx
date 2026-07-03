@@ -8,41 +8,48 @@ const LoadingSpinner = ({
   loadingType = false,
   loadingIcon = '',
 }: ILoadingSpinnerProps): JSX.Element => {
-  const renderSpinnerComponent = () => <div className="loading-spinner" />;
-
-  const renderSpinnerSection = () => (
+  const renderSection = (className: string) => (
     <View style={styles.loadingSpinnerSectionContainer}>
-      <div className="loading-spinner-section" />
-    </View>
-  );
-  const renderSpinnerSectionS = () => (
-    <View style={styles.loadingSpinnerSectionContainer}>
-      <div className="loading-spinner-section-s" />
+      <div className={className} />
     </View>
   );
 
-  const renderSpinnerPage = () => (
+  const renderButton = (className: string) => (
+    <View style={styles.loadingSpinnerButtonContainer}>
+      <div className={className} />
+    </View>
+  );
+
+  const renderPage = () => (
     <View style={styles.loadingSpinnerPageContainer}>
       <View style={styles.loadingSpinnerPageContent}>
         <div className="loading-spinner-pages" />
-        {loadingIcon ? (
-          <img style={styles.loadingIcon} src={loadingIcon} alt={''} />
-        ) : null}
+        {loadingIcon && (
+          <img style={styles.loadingIcon} src={loadingIcon} alt={'Loading'} />
+        )}
       </View>
     </View>
   );
 
-  return (
-    <>
-      {loadingType === 'page'
-        ? renderSpinnerPage()
-        : loadingType === 'section'
-        ? renderSpinnerSection()
-        : loadingType === 'section-s'
-        ? renderSpinnerSectionS()
-        : renderSpinnerComponent()}
-    </>
-  );
+  switch (loadingType) {
+    case 'page':
+      return renderPage();
+
+    case 'section':
+      return renderSection('loading-spinner-section');
+
+    case 'section-s':
+      return renderSection('loading-spinner-section-s');
+
+    case 'section-xs':
+      return renderSection('loading-spinner-section-xs');
+
+    case 'button':
+      return renderButton('loading-spinner-section-xs');
+
+    default:
+      return <div className="loading-spinner" />;
+  }
 };
 
 export default LoadingSpinner;

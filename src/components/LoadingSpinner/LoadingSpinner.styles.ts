@@ -14,6 +14,10 @@ export const styles = {
     alignItems: 'center',
     height: window.innerHeight,
   },
+  loadingSpinnerButtonContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   loadingSpinnerPageContainer: {
     justifyContent: 'center',
     alignItems: 'center',

@@ -1,4 +1,4 @@
 export interface ILoadingSpinnerProps {
-  loadingType?: 'page' | 'section' | 'section-s' | 'component' | boolean;
+  loadingType?: 'page' | 'section' | 'section-s' | 'section-xs' | 'button' | 'component' | boolean;
   loadingIcon?: string;
 }
