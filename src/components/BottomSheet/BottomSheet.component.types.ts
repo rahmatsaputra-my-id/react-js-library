@@ -5,6 +5,8 @@ export interface BottomSheetProps {
   onClose: () => void;
   title?: string;
   children?: ReactNode;
+  containerStyles?: any;
+  showCloseButton: boolean;
 }
 
 export interface StyleMap {

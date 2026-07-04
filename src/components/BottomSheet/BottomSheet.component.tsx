@@ -8,6 +8,8 @@ const BottomSheet: React.FC<BottomSheetProps> = ({
   onClose,
   title = '',
   children,
+  containerStyles,
+  showCloseButton = true,
 }) => {
   const [paddingBottom, setPaddingBottom] = useState(20);
 
@@ -63,13 +65,21 @@ const BottomSheet: React.FC<BottomSheetProps> = ({
   return ReactDOM.createPortal(
     <div style={styles.backdrop} onClick={onClose}>
       <div
-        style={{...styles.sheet, paddingBottom: paddingBottom}}
+        style={{
+          ...styles.sheet,
+          ...containerStyles,
+          paddingBottom: paddingBottom,
+        }}
         onClick={e => e.stopPropagation()}>
         <div style={styles.header}>
           <span style={styles.title}>{title}</span>
-          <button style={styles.closeButton} onClick={onClose}>
-            ×
-          </button>
+          {showCloseButton ? (
+            <button
+              style={styles.closeButton}
+              onClick={onClose}
+              children={'x'}
+            />
+          ) : null}
         </div>
         <div style={styles.content}>{children}</div>
       </div>
