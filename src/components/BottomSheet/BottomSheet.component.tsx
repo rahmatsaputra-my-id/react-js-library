@@ -18,12 +18,11 @@ const BottomSheet: React.FC<BottomSheetProps> = ({
       let basePadding = 20;
 
       if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-        basePadding = 80; // default safe area for iPhones with notch
+        basePadding = 80;
       } else if (/Android/.test(navigator.userAgent)) {
         basePadding = 50;
       }
 
-      // Then override with measured safe area inset if available
       const div = document.createElement('div');
       div.style.position = 'absolute';
       div.style.bottom = '0';
