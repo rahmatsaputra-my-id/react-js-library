@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.103](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.102...v0.0.103) (2026-07-10)
+
+
+### Bug Fixes
+
+* adjust bottom sheet ([6f97921](https://github.com/rahmatsaputra-my-id/react-js-library/commit/6f97921a5f158aa4756c8ada58221e1350a14795))
+
 ### [0.0.102](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.100...v0.0.102) (2026-07-04)
 
 ### [0.0.100](https://github.com/rahmatsaputra-my-id/react-js-library/compare/v0.0.99...v0.0.100) (2026-07-04)
