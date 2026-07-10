@@ -7,7 +7,7 @@ export const styles: StyleMap = {
     left: 0,
     height: '100vh',
     width: '100vw',
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    backgroundColor: 'rgba(26, 26, 26, 0.7)',
     zIndex: 1000,
     display: 'flex',
     justifyContent: 'center',
