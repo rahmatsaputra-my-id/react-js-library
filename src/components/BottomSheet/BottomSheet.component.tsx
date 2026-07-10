@@ -6,7 +6,7 @@ import {styles} from './BottomSheet.component.styles';
 const BottomSheet: React.FC<BottomSheetProps> = ({
   visible,
   onClose,
-  title = '',
+  title,
   children,
   containerStyles,
   showCloseButton = true,
@@ -70,16 +70,18 @@ const BottomSheet: React.FC<BottomSheetProps> = ({
           paddingBottom: paddingBottom,
         }}
         onClick={e => e.stopPropagation()}>
-        <div style={styles.header}>
-          <span style={styles.title}>{title}</span>
-          {showCloseButton ? (
-            <button
-              style={styles.closeButton}
-              onClick={onClose}
-              children={'x'}
-            />
-          ) : null}
-        </div>
+        {title ? (
+          <div style={styles.header}>
+            <span style={styles.title}>{title}</span>
+            {showCloseButton ? (
+              <button
+                style={styles.closeButton}
+                onClick={onClose}
+                children={'x'}
+              />
+            ) : null}
+          </div>
+        ) : null}
         <div style={styles.content}>{children}</div>
       </div>
     </div>,
